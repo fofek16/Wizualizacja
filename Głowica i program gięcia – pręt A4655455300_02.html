@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Głowica i program gięcia – pręt A4655455300_02</title>
+<style>
+:root{color-scheme:light;--bg:#eef1f5;--fg:#1b2430;--mut:#5b6675;--card:#fff;--bd:#d3d9e2;--ac:#d9480f;--hl:#ffe9a8;--ok:#1e8e3e;--bad:#c62828;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14181f;--fg:#e8ecf2;--mut:#9aa5b5;--card:#1d232d;--bd:#2c3441;--ac:#ff8a4c;--hl:#5a4a12;--ok:#5fd37f;--bad:#ff7b72}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14181f;--fg:#e8ecf2;--mut:#9aa5b5;--card:#1d232d;--bd:#2c3441;--ac:#ff8a4c;--hl:#5a4a12;--ok:#5fd37f;--bad:#ff7b72}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:12px}
+h1{font-size:17px;margin:4px 0 2px}h2{font-size:14px;margin:14px 0 6px}.sub{font-size:12px;color:var(--mut);margin-bottom:8px}
+#cv{width:100%;height:58vh;min-height:320px;border:1px solid var(--bd);border-radius:12px;background:var(--card);touch-action:none;display:block}
+.bar{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+button{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:8px 11px;font-size:13px;font-weight:600}
+button.g{background:var(--card);color:var(--fg);border:1px solid var(--bd)}
+button.s{padding:4px 8px;font-size:12px}
+input[type=range]{flex:1;min-width:80px}
+.box{margin-top:8px;padding:9px 12px;background:var(--card);border:1px solid var(--bd);border-radius:10px;font-size:13px;line-height:1.5}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);font-size:13px}
+th,td{padding:6px 7px;text-align:right;border-bottom:1px solid var(--bd)}th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:600;font-size:12px}tr.on td{background:var(--hl)}td small{display:block;color:var(--mut);font-size:10px}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--bad);font-weight:600}
+.leg,.note{font-size:12px;color:var(--mut);line-height:1.6;margin-top:8px}.note{font-size:11px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Głowica giętarki i program gięcia – pręt A4655455300_02</h1>
+<div class="sub">Drut Ø3 mm, 5 gięć. Przeciągnij, aby obrócić widok. Wszystkie narzędzia są widoczne cały czas.</div>
+<canvas id="cv"></canvas>
+<div class="bar"><button id="pp">Pauza</button><input id="sc" type="range" min="0" max="1000" value="0"><label style="font-size:12px;color:var(--mut)">Tempo <input id="sp" type="range" min="0.3" max="3" step="0.1" value="1" style="width:70px"></label></div>
+<div class="bar"><button class="g" id="v1">Widok z góry</button><button class="g" id="v2">Widok skośny</button><button class="g" id="cvb"></button></div>
+<div class="box" id="step"></div>
+<h2>Program (L → obrót EW → gięcie BW; plus = w dół, minus = w górę)</h2>
+<table><thead><tr><th>Nr</th><th>L [mm]</th><th>EW [°]</th><th>BW [°]</th><th>r [mm]</th><th>Kierunek</th></tr></thead><tbody id="tb"></tbody></table>
+<div class="box" id="stats"></div>
+<h2>Głowica – wymiary (fi)</h2>
+<div class="box">
+<b>Model w animacji:</b> korpus <b>Ø60</b> · tarcza wewnętrzna <b>Ø34</b> (obraca się o 180°, przenosi kołki na drugą stronę drutu) · kołek centralny A <b>Ø0,6</b> (ostre gięcia r 1,5) · kołek centralny B <b>Ø3</b> (gięcie nr 3, r 3,0) · kołek gnący <b>Ø6</b> · wysokość kołków 6 mm · rozstaw A–B 4,5 mm (drut Ø3 przechodzi między nimi).<br>
+<b>Głowica z filmu (szacunek):</b> tarcza ≈ <b>Ø34</b>, korpus ≈ <b>Ø60</b>, kołek ≈ <b>Ø6</b>, odstęp środków dwóch kołków ≈ 9–10 mm. Skala z kołka 6,05 mm ze zdjęcia suwmiarki, błąd rzędu ±10%, drut na tamtym filmie ma ok. Ø2.
+</div>
+<div class="leg"><span style="color:#f1c40f">■</span> kołek A · <span style="color:#e67e22">■</span> kołek B · <span style="color:#e74c3c">■</span> kołek gnący Ø6 · <span style="color:#16a085">■</span> szczęki zabieraka (podparcie; pomarańczowe, gdy podpierają przy gięciu) · <span style="color:#8e44ad">■</span> korpus zabieraka (obraca drut) · <span style="color:#27ae60">■</span> rolki podające · <span style="color:#b03a2e">■</span> nóż · <span style="color:#2e86de">■</span> tarcza głowicy. Kołki unoszą się na czas gięcia, a poza nim stoją niżej, pod drutem, ale nie znikają.</div>
+<div class="note">Przycisk „Zmień” przy wierszu przełącza kierunek obrotu w tym wierszu (równoważny zapis: EW ± 180° i odwrócony znak BW), a następne wiersze przeliczają się automatycznie, więc wyrób zostaje ten sam. Pod tabelą widać sprawdzenie kolizji dla wybranego wariantu. Przycisk kierunku +EW zmienia tylko konwencję znaku EW w tabeli. Kołek A o Ø0,6 odpowiada modelowi (promień wewnętrzny ≈ 0); w praktyce ostre gięcie Ø3 wymaga ostrej krawędzi albo większego promienia, do ustalenia z konstruktorem. Ramię kołka gnącego pominięto na rysunku dla czytelności.</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const V=(x,y,z)=>new THREE.Vector3(x,y,z),D=Math.PI/180,fmt=n=>(Math.round(n*10)/10).toString().replace(".",",");
+const ss=x=>x*x*(3-2*x),cl=x=>Math.min(1,Math.max(0,x));
+const wrap=a=>{a=((a+180)%360+360)%360-180;return a==-180?180:a};
+const ID={L:[1.9,33.06,8.67,6.12,46.28],tail:1.9,th:[90,53.1,134.9,44.2,90],R:[1.5,1.5,3,1.5,1.5],roll:[0,134.9,-58.9,78.9,-164.6]};
+let sg=[1,0,1,0,1],conv=1,S=[],ROWS=[],T=0,TOT=0,bends=[];
+const dur=s=>s.k=="F"?Math.max(.5,s.v/22):s.k=="R"?.7+Math.abs(s.v)/160:s.k=="B"?.7+Math.abs(s.v)/130:1.2;
+function build(){
+  ROWS=ID.L.map((L,i)=>({L,e:i?wrap(ID.roll[i]+180*(sg[i]-sg[i-1])):null,bw:ID.th[i]*(sg[i]?-1:1),r:ID.R[i]}));
+  S=[];ROWS.forEach((r,i)=>{S.push({k:"F",v:r.L,row:i});if(r.e!==null)S.push({k:"R",v:r.e,row:i});S.push({k:"B",v:r.bw,r:r.r,row:i});});
+  S.push({k:"F",v:ID.tail,row:5},{k:"C",row:5});
+  T=0;S.forEach(s=>{s.t0=T;T+=dur(s)});TOT=T+2.5;
+  bends=S.filter(s=>s.k=="B");bends.forEach(b=>{b.sd=b.v>0?-1:1;const ds=b.r<2?b.sd:-b.sd;b.dl=ds>0?0:Math.PI;});
+}
+function pinPos(b,al){const rho=b.r+1.5+3,a=(b.sd<0?90+al:-90-al)*D;return [rho*Math.cos(a),b.sd*b.r+rho*Math.sin(a)];}
+function sim(tm){
+  let p=V(0,0,0),t=V(1,0,0),dv=V(0,1,0);const pts=[p.clone()];let idx=0,acc=0,feed=0,cutf=0;
+  for(let i=0;i<S.length;i++){
+    const s=S[i],f=cl((tm-s.t0)/dur(s));if(f<=0)break;idx=i;
+    if(s.k=="F"){const L=s.v*f,m=Math.max(1,Math.ceil(L/2)),p0=p.clone();for(let j=1;j<=m;j++)pts.push(p0.clone().addScaledVector(t,L*j/m));p=pts[pts.length-1].clone();feed+=L;}
+    else if(s.k=="R"){const a=s.v*f*D,n=new THREE.Vector3().crossVectors(t,dv);dv=dv.clone().multiplyScalar(Math.cos(a)).addScaledVector(n,Math.sin(a));acc+=a;}
+    else if(s.k=="B"){const sgn=Math.sign(s.v),c0=dv.clone().multiplyScalar(sgn),t0=t.clone(),R=s.r,th=Math.abs(s.v)*f*D,q=p.clone().addScaledVector(c0,R),m=Math.max(1,Math.ceil(Math.abs(s.v)*f/6));
+      for(let j=1;j<=m;j++){const a=th*j/m;pts.push(q.clone().addScaledVector(c0,-R*Math.cos(a)).addScaledVector(t0,R*Math.sin(a)));}
+      p=pts[pts.length-1].clone();t=t0.clone().multiplyScalar(Math.cos(th)).addScaledVector(c0,Math.sin(th));const c2=c0.clone().multiplyScalar(Math.cos(th)).addScaledVector(t0,-Math.sin(th));dv=c2.multiplyScalar(sgn);}
+    else cutf=f;
+    if(f<1)break;
+  }
+  const n=new THREE.Vector3().crossVectors(t,dv);
+  return {w:pts.map(v=>{const d=v.clone().sub(p);return V(d.dot(t),-d.dot(dv),-d.dot(n));}),idx,acc,feed,cutf};
+}
+function tools(tm){
+  const b0=bends[0],p0=pinPos(b0,0);let st={dl:b0.dl,cy:b0.sd*b0.r,px:p0[0],py:p0[1],lift:0},end=null,bi=-1,sup=false,clamp=1;
+  for(const s of S){
+    const f=cl((tm-s.t0)/dur(s));if(f<=0)break;
+    if(s.k=="F"){st=end||st;clamp=0;}
+    else if(s.k=="B"){bi++;const e=Math.min(ss(cl(f/.12)),ss(cl((1-f)/.12))),p=pinPos(s,Math.abs(s.v)*f),q=pinPos(s,Math.abs(s.v));
+      st={dl:s.dl,cy:s.sd*s.r,px:p[0],py:p[1],lift:e};end={dl:s.dl,cy:s.sd*s.r,px:q[0],py:q[1],lift:0};sup=f<1;clamp=1;}
+    else if(s.k=="R"){const nb=bends[bi+1],e=ss(f),ps=pinPos(nb,0),pe=end;
+      st={dl:pe.dl+(nb.dl-pe.dl)*e,cy:pe.cy+(nb.sd*nb.r-pe.cy)*e,px:pe.px+(ps[0]-pe.px)*e,py:pe.py+(ps[1]-pe.py)*e,lift:0};clamp=1;}
+    else{st=end||st;clamp=1;}
+    if(f<1)break;
+  }
+  return Object.assign({sup,clamp},st);
+}
+function check(){
+  for(let tm=0;tm<=T;tm+=0.1){
+    const s=sim(tm),w=s.w,st=S[s.idx],pts=[];
+    for(let i=0;i<w.length-1;i++){const n=Math.max(1,Math.ceil(w[i].distanceTo(w[i+1])));for(let j=0;j<n;j++)pts.push(w[i].clone().lerp(w[i+1],j/n));}
+    pts.push(w[w.length-1]);const rw="wiersz "+(st.row+1);
+    for(const p of pts){const r=Math.hypot(p.x,p.y),rad=Math.hypot(p.y,p.z);
+      if(r<31&&p.z<-0.4)return {ok:false,msg:"drut schodzi pod płaszczyznę głowicy ("+rw+")"};
+      if(p.x>12&&p.x<56&&rad>2.2&&rad<11.2)return {ok:false,msg:"kolizja z zabierakiem ("+rw+")"};}
+    if(st.k=="B"){const f=cl((tm-st.t0)/dur(st)),R=st.r,sd=st.sd,pb=pinPos(st,Math.abs(st.v)*f);
+      const C=[["kołkiem centralnym",0,sd*R,R<2?.3:1.5],["kołkiem podporowym",0,R<2?-sd*3:-sd*1.5,R<2?1.5:.3],["kołkiem gnącym",pb[0],pb[1],3]];
+      for(const p of pts)for(const c of C){if(Math.hypot(p.x-c[1],p.y-c[2])<1.5+c[3]-(c[3]<1?.35:.1))return {ok:false,msg:"kolizja z "+c[0]+" ("+rw+")"};}}
+  }
+  return {ok:true,msg:"bez kolizji z głowicą, kołkami i zabierakiem"};
+}
+/*RENDER*/
+const lab=s=>s.k=="F"?"podanie "+fmt(s.v)+" mm":s.k=="R"?"obrót zabieraka "+fmt(s.v*conv)+"°, tarcza ustawia kołki":s.k=="B"?"gięcie "+fmt(Math.abs(s.v))+"° "+(s.v>0?"w dół":"w górę")+" na kołku "+(s.r<2?"A Ø0,6":"B Ø3")+", zabierak podpiera drut":"nóż odcina wyrób";
+const tb=document.getElementById("tb"),stats=document.getElementById("stats"),cvb=document.getElementById("cvb");
+function table(){
+  tb.innerHTML=ROWS.map((r,i)=>`<tr id="r${i}"><td>${i+1}</td><td>${fmt(r.L)}</td><td>${r.e===null?"–":fmt(r.e*conv)}</td><td>${fmt(r.bw)}<small>${r.bw>0?"w dół":"w górę"}</small></td><td>${fmt(r.r)}</td><td><button class="g s" onclick="flip(${i})">Zmień</button></td></tr>`).join("")+`<tr id="r5"><td>6</td><td>${fmt(ID.tail)}</td><td>–</td><td>–</td><td>–</td><td></td></tr>`;
+  const es=ROWS.slice(1).map(r=>r.e),mx=Math.max(...es.map(Math.abs)),sum=es.reduce((a,b)=>a+Math.abs(b),0);
+  let run=0,best=0,sgn=0;es.forEach(e=>{const g=Math.sign(e);run=g==sgn?run+e:e;sgn=g;best=Math.max(best,Math.abs(run));});
+  const c=check();
+  stats.innerHTML=`Obroty: największy <b>${fmt(mx)}°</b>, największy ciągły w jedną stronę <b>${fmt(best)}°</b>, suma <b>${fmt(sum)}°</b>.<br>Kolizje: <span class="${c.ok?"ok":"bad"}">${c.ok?"OK":"UWAGA"}: ${c.msg}</span>`;
+  cvb.textContent="Kierunek +EW: "+(conv>0?"zgodnie z zegarem":"przeciwnie do zegara");
+  prevRow=-1;
+}
+function flip(i){sg[i]^=1;build();table();tm=0;}
+cvb.onclick=()=>{conv=-conv;table();};
+build();
+const cv=document.getElementById("cv"),r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+r.setPixelRatio(Math.min(devicePixelRatio,2));r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,1,1000);
+sc.add(new THREE.HemisphereLight(0xffffff,0x6a7585,.75));
+const dl=new THREE.DirectionalLight(0xffffff,1.0);dl.position.set(50,110,130);dl.castShadow=true;dl.shadow.mapSize.set(2048,2048);
+Object.assign(dl.shadow.camera,{left:-110,right:110,top:110,bottom:-110,near:10,far:400});dl.shadow.bias=-.0004;sc.add(dl);
+const fl=new THREE.DirectionalLight(0xbcd0ff,.35);fl.position.set(-80,-40,90);sc.add(fl);
+const M=(c,m=.6,ro=.4,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,metalness:m,roughness:ro},o));
+const add=(g,m,x,y,z,parent=sc)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;parent.add(o);return o;};
+const cz=(rad,h,seg=40)=>new THREE.CylinderGeometry(rad,rad,h,seg).rotateX(Math.PI/2);
+const cx=(rad,h,seg=32)=>new THREE.CylinderGeometry(rad,rad,h,seg).rotateZ(Math.PI/2);
+// tekstura tarczy
+const tc=document.createElement("canvas");tc.width=tc.height=512;const g=tc.getContext("2d");
+const gr=g.createRadialGradient(256,256,20,256,256,256);gr.addColorStop(0,"#dfe4ea");gr.addColorStop(1,"#aeb6c1");g.fillStyle=gr;g.fillRect(0,0,512,512);
+for(let i=6;i<250;i+=5){g.strokeStyle="rgba(60,70,85,"+(.08+.1*((i*7)%3)/3)+")";g.beginPath();g.arc(256,256,i,0,7);g.stroke();}
+g.fillStyle="rgba(30,40,55,.8)";g.font="bold 34px sans-serif";g.textAlign="center";g.fillText("Ø34",256,452);g.beginPath();g.arc(256,70,12,0,7);g.fill();
+const dtex=new THREE.CanvasTexture(tc);
+// płyta, korpus, tarcza
+add(new THREE.BoxGeometry(270,200,4),M(0x2c333d,.5,.6),30,0,-34);
+add(cz(30,26,64),M(0x7d8794,.65,.42),0,0,-19);
+add(cz(33,4,64),M(0x69727f,.65,.45),0,0,-12);
+for(let k=0;k<4;k++){const a=(45+90*k)*D;add(new THREE.CylinderGeometry(3,3,2.4,6).rotateX(Math.PI/2),M(0x3a424d,.8,.35),24.5*Math.cos(a),24.5*Math.sin(a),-4.8);}
+const disc=new THREE.Group();sc.add(disc);
+add(new THREE.CylinderGeometry(17,17,1.5,64).rotateX(Math.PI/2),[M(0xb4bcc7,.8,.3),M(0xffffff,.7,.35,{map:dtex}),M(0xb4bcc7,.8,.3)],0,0,-5.25,disc);
+// kołki
+const BASE=-4.5,pinGeo=n=>new THREE.CylinderGeometry(1,1,1,28,1).rotateX(Math.PI/2);
+const mkPin=(rad,col,parent)=>{const m=add(pinGeo(),M(col,.55,.28),0,0,0,parent);m.userData.rad=rad;return m;};
+const pinA=mkPin(.3,0xf1c40f,disc),pinB=mkPin(1.5,0xe67e22,disc),pinC=mkPin(3,0xe74c3c,sc);
+pinA.position.set(0,1.5,0);pinB.position.set(0,-3,0);
+const setPin=(m,x,y,lift)=>{const tip=-1.8+4.8*lift,h=tip-BASE,rr=m.userData.rad;m.scale.set(rr,rr,h);m.position.z=BASE+h/2;if(x!==null){m.position.x=x;m.position.y=y;}};
+// drut, nóż, zabierak, rolki
+const copper=M(0xc98a6a,.75,.3);
+const wire=add(cx(1.5,130),copper,65,0,0);
+const knife=add(new THREE.BoxGeometry(2.4,14,12),M(0xb03a2e,.6,.3),3.8,66,0);
+const car=new THREE.Group();sc.add(car);
+const jawM=M(0x16a085,.6,.35),jawU=add(new THREE.BoxGeometry(16,7,10),jawM,24,5,0,car),jawD=add(new THREE.BoxGeometry(16,7,10),jawM,24,-5,0,car);
+[[19,1],[29,1],[19,-1],[29,-1]].forEach(a=>add(cz(1.6,1.4,16),M(0x2c333d,.8,.3),a[0],a[1]*5,5.6,car));
+add(cx(10.5,22,48),M(0x8e44ad,.55,.4),47,0,0,car);add(cx(11,3,48),M(0x6c3483,.6,.4),36.5,0,0,car);
+add(new THREE.BoxGeometry(22,3.6,6),M(0xf39c12,.4,.4),47,10.6,0,car);
+const rU=add(cz(8,10),M(0x27ae60,.5,.4),72,9.5,0),rD=add(cz(8,10),M(0x27ae60,.5,.4),72,-9.5,0);
+add(new THREE.BoxGeometry(30,3,16),M(0x2c333d,.5,.5),72,18.5,-3);add(new THREE.BoxGeometry(30,3,16),M(0x2c333d,.5,.5),72,-18.5,-3);
+let part=null,az=.3,el=.62,dist=200;
+function cm(){cam.position.set(14+dist*Math.cos(el)*Math.sin(az),dist*Math.sin(el),-4+dist*Math.cos(el)*Math.cos(az));cam.lookAt(14,0,-4);}
+let down=false,lx=0,ly=0;
+cv.addEventListener("pointerdown",e=>{down=true;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId)});
+cv.addEventListener("pointerup",()=>down=false);
+cv.addEventListener("pointermove",e=>{if(!down)return;az-=(e.clientX-lx)*.01;el=Math.max(-1.3,Math.min(1.5,el+(e.clientY-ly)*.01));lx=e.clientX;ly=e.clientY;});
+function size(){const w=cv.clientWidth,h=cv.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();dist=w<500?270:200}
+addEventListener("resize",size);size();
+let tm=0,play=true,last=performance.now(),prevRow=-1;
+const pp=document.getElementById("pp"),slider=document.getElementById("sc"),spd=document.getElementById("sp"),stepEl=document.getElementById("step");
+pp.onclick=()=>{play=!play;pp.textContent=play?"Pauza":"Odtwórz"};
+slider.oninput=()=>{tm=slider.value/1000*TOT;play=false;pp.textContent="Odtwórz"};
+document.getElementById("v1").onclick=()=>{az=0;el=1.5};document.getElementById("v2").onclick=()=>{az=.3;el=.62};
+table();
+function frame(now){
+  const dt=Math.min(.1,(now-last)/1000);last=now;
+  if(play){tm+=dt*parseFloat(spd.value);if(tm>=TOT)tm=0;slider.value=Math.round(tm/TOT*1000);}
+  const tt=Math.min(tm,T),s=sim(tt),tl=tools(tt);
+  if(part){sc.remove(part);part.geometry.dispose();}
+  if(s.w.length>1){part=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(s.w,false,"centripetal"),Math.max(8,s.w.length*3),1.5,16,false),copper);part.castShadow=part.receiveShadow=true;
+    const fall=ss(cl((tm-T+1.2)/1.2));part.position.set(-14*fall,-36*fall,0);sc.add(part);}
+  disc.rotation.z=tl.dl;setPin(pinA,null,null,tl.lift);setPin(pinB,null,null,tl.lift);setPin(pinC,tl.px,tl.py,tl.lift);
+  car.rotation.x=-s.acc;const gap=(1-tl.clamp)*1.4;jawU.position.y=5+gap;jawD.position.y=-5-gap;
+  jawM.color.set(tl.sup?0xf39c12:0x16a085);jawM.emissive.set(tl.sup?0x7a3d00:0x000000);
+  rU.rotation.z=-s.feed/8;rD.rotation.z=s.feed/8;
+  knife.position.y=66-59*Math.sin(Math.PI*cl(s.cutf));
+  const done=tm>=T,ri=S[s.idx].row;
+  stepEl.textContent=done?"Gotowe: wyrób odcięty":"Wiersz "+(ri+1)+" · "+lab(S[s.idx]);
+  if(ri!==prevRow){for(let i=0;i<6;i++){const e=document.getElementById("r"+i);if(e)e.className=i==ri?"on":"";}prevRow=ri;}
+  if(done)az+=dt*.3;
+  cm();r.render(sc,cam);requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
