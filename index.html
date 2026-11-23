@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Głowica i program gięcia – pręt A4655455300_02</title>
+<style>
+:root{color-scheme:light;--bg:#eef1f5;--fg:#1b2430;--mut:#5b6675;--card:#fff;--bd:#d3d9e2;--ac:#d9480f;--hl:#ffe9a8;--ok:#1e8e3e;--bad:#c62828;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14181f;--fg:#e8ecf2;--mut:#9aa5b5;--card:#1d232d;--bd:#2c3441;--ac:#ff8a4c;--hl:#5a4a12;--ok:#5fd37f;--bad:#ff7b72}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14181f;--fg:#e8ecf2;--mut:#9aa5b5;--card:#1d232d;--bd:#2c3441;--ac:#ff8a4c;--hl:#5a4a12;--ok:#5fd37f;--bad:#ff7b72}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1320px;width:calc(100% - 32px);margin:0 auto;padding:14px}
+h1{font-size:17px;margin:4px 0 2px}h2{font-size:14px;margin:14px 0 6px}.sub{font-size:12px;color:var(--mut);margin-bottom:8px}
+#cv{width:100%;height:58vh;min-height:320px;border:1px solid var(--bd);border-radius:12px;background:var(--card);touch-action:none;display:block}
+.bar{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+button{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:8px 11px;font-size:13px;font-weight:600}
+button.g{background:var(--card);color:var(--fg);border:1px solid var(--bd)}
+button.s{padding:4px 8px;font-size:12px}
+input[type=range]{flex:1;min-width:80px}
+.box{margin-top:8px;padding:9px 12px;background:var(--card);border:1px solid var(--bd);border-radius:10px;font-size:13px;line-height:1.5}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);font-size:13px}
+th,td{padding:6px 7px;text-align:right;border-bottom:1px solid var(--bd)}th:first-child,td:first-child{text-align:left}
+th{color:var(--mut);font-weight:600;font-size:12px}tr.on td{background:var(--hl)}td small{display:block;color:var(--mut);font-size:10px}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--bad);font-weight:600}
+.geo-num{position:relative;display:block;width:100%;min-width:0}.in .geo-num input{display:block;width:100%;min-width:0;padding:3px 29px 3px 5px}.geo-sign{position:absolute;right:2px;top:50%;transform:translateY(-50%);padding:2px 3px;font-size:11px;line-height:1.2;min-width:22px;height:23px;border-radius:5px;z-index:1}.in input{width:100%;min-width:0;font-size:12px;padding:3px;border:1px solid var(--bd);border-radius:4px;background:var(--bg);color:var(--fg)}.in{table-layout:fixed}.in th,.in td{padding:2px;text-align:center}
+.cfgw{display:flex;gap:12px;flex-wrap:wrap}.geo-layout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);gap:16px;align-items:start}.geo-preview{width:100%;height:360px;display:block;border:1px solid var(--bd);border-radius:10px;background:var(--bg);touch-action:none}.geo-table-scroll{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}.geo-table-scroll .in{min-width:700px}@media(max-width:680px){.geo-layout{grid-template-columns:1fr}.geo-preview{height:260px}.geo-table-scroll .in{min-width:700px}}.cfgw>div:first-child{flex:1 1 360px;min-width:0}.cfgw>div:last-child{flex:1 1 280px;min-width:0}
+.leg,.note{font-size:12px;color:var(--mut);line-height:1.6;margin-top:8px}.note{font-size:11px}
+
+/* Układ mobilny: zachowuje szerokość treści, a szerokie tabele przewijają się poziomo. */
+@media(max-width:760px){
+  .wrap{width:100%;max-width:none;padding:10px 9px;margin:0 auto}
+  h1{font-size:16px;line-height:1.3} h2{font-size:14px;margin-top:13px}
+  #cv{height:44vh;min-height:250px;max-height:430px;border-radius:10px}
+  .bar{gap:6px;align-items:stretch}
+  .bar button{min-height:38px;flex:0 0 auto}
+  .bar label{display:flex;align-items:center;gap:5px;flex:1 1 145px;min-width:0;font-size:12px}
+  .bar input:not([type=range]),.bar select{max-width:100%;min-width:0}
+  input[type=range]{min-width:60px}
+  .box{padding:9px;font-size:12px}
+  table:not(.in){display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+  table:not(.in) th,table:not(.in) td{padding:7px 8px}
+  .geo-layout{grid-template-columns:minmax(0,1fr);gap:10px}
+  .geo-preview{height:245px}
+  .geo-table-scroll{overflow-x:auto;max-width:100%}
+  .cfgw{gap:9px}
+  .cfgw>div:first-child,.cfgw>div:last-child{flex:1 1 100%;min-width:0}
+  #cv2{height:245px!important}
+  #co,#modelCoords,#pt{font-size:11px!important;max-width:100%}
+  #step,#dst,#stats{overflow-wrap:anywhere}
+  .leg,.note{font-size:11px}
+}
+@media(max-width:420px){
+  .wrap{padding:8px 7px}
+  #cv{height:40vh;min-height:230px}
+  .bar button{padding:8px 9px;font-size:12px}
+  .bar label{flex-basis:100%}
+  #sp{width:65px!important}
+  .geo-preview{height:220px}
+}
+
+/* Dodatkowe dopasowanie do iPhone'a: bez zmiany układu desktopowego. */
+@media (max-width: 760px) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  .wrap { width:100%; max-width:100%; padding:9px 8px; margin:0; }
+  h1 { font-size:16px; line-height:1.3; overflow-wrap:anywhere; }
+  h2 { font-size:14px; line-height:1.3; }
+  .bar { display:flex; flex-wrap:wrap; gap:6px; align-items:stretch; }
+  .bar button, button { min-height:38px; }
+  .bar label { flex:1 1 135px; min-width:0; font-size:12px; }
+  .bar input, .bar select, input, select, textarea { max-width:100%; min-width:0; font-size:16px; }
+  #cv { display:block; width:100%; height:42vh; min-height:245px; max-height:430px; }
+  #cv2 { width:100%; max-width:100%; }
+  .geo-layout, .cfgw { display:flex; flex-direction:column; gap:10px; }
+  .geo-layout > *, .cfgw > * { width:100%; min-width:0; }
+  .geo-table-scroll, .table-scroll, .tblwrap { width:100%; max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table { max-width:none; }
+  #step, #dst, #stats, #msg, .note, .leg { overflow-wrap:anywhere; }
+  .geo-preview { width:100%; height:230px; }
+}
+@media (max-width: 420px) {
+  .wrap { padding:8px 6px; }
+  #cv { height:39vh; min-height:225px; }
+  .bar button, button.g { padding:8px 9px; font-size:12px; }
+  .bar label { flex-basis:100%; }
+  #sp { width:64px !important; }
+  td, th { padding:5px 4px; font-size:11px; }
+}
+
+
+/* Tylko telefon: ręczna tabela geometrii mieści się w szerokości ekranu.
+   Reguły desktopowe pozostają bez zmian. */
+@media (max-width: 680px) {
+  .geo-table-scroll { overflow-x:visible !important; }
+  .geo-table-scroll .in {
+    width:100% !important;
+    min-width:0 !important;
+    table-layout:fixed !important;
+    font-size:10px !important;
+  }
+  .geo-table-scroll .in th,
+  .geo-table-scroll .in td {
+    padding:4px 2px !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    text-align:center;
+    font-size:10px !important;
+  }
+  .geo-table-scroll .in th:nth-child(1),
+  .geo-table-scroll .in td:nth-child(1) { width:7%; }
+  .geo-table-scroll .in th:nth-child(2),
+  .geo-table-scroll .in td:nth-child(2),
+  .geo-table-scroll .in th:nth-child(3),
+  .geo-table-scroll .in td:nth-child(3),
+  .geo-table-scroll .in th:nth-child(4),
+  .geo-table-scroll .in td:nth-child(4),
+  .geo-table-scroll .in th:nth-child(5),
+  .geo-table-scroll .in td:nth-child(5) { width:16%; }
+  .geo-table-scroll .in th:nth-child(6),
+  .geo-table-scroll .in td:nth-child(6) { width:29%; }
+  .geo-table-scroll .in .geo-num { width:100%; min-width:0; }
+  .geo-table-scroll .in .geo-num input {
+    width:100% !important;
+    min-width:0 !important;
+    height:34px;
+    padding:3px 3px !important;
+    font-size:12px !important;
+    text-align:center;
+  }
+  .geo-table-scroll .in .geo-num input[data-col="2"],
+  .geo-table-scroll .in .geo-num input[data-col="3"] { padding-right:21px !important; }
+  .geo-table-scroll .in .geo-sign {
+    right:1px;
+    min-width:18px;
+    width:18px;
+    height:24px;
+    padding:1px;
+    font-size:10px;
+  }
+  .geo-table-scroll .in td:last-child { white-space:nowrap !important; }
+  .geo-table-scroll .in td:last-child button {
+    min-width:24px;
+    width:24px;
+    height:30px;
+    padding:2px;
+    margin:1px 0;
+    font-size:12px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Głowica giętarki i program gięcia – pręt A4655455300_02</h1>
+<div class="sub">Wgraj model STEP/IGES lub wpisz współrzędne. Przeciągnij lewym przyciskiem, aby obrócić; prawym, środkowym lub Shift+przeciągnięcie, aby przesunąć model.</div>
+<canvas id="cv"></canvas>
+<div class="bar"><button id="pp">Pauza</button><input id="sc" type="range" min="0" max="1000" value="0"><label style="font-size:12px;color:var(--mut)">Tempo <input id="sp" type="range" min="0.3" max="3" step="0.1" value="1" style="width:70px"></label></div>
+<div class="bar"><button class="g" id="zi">＋</button><button class="g" id="zo">－</button><button class="g" id="vm">Pokaż cały model</button><button class="g" id="v1">Widok z góry</button><button class="g" id="v2">Widok skośny</button><button class="g" id="cvb"></button></div>
+<div class="box" id="step"></div>
+<h2>Wydajność i czas cyklu</h2>
+<div class="box"><div class="note">Parametry maszyny (wartości domyślne są szacunkowe, wpisz własne):</div>
+<div class="bar"><label>Podawanie [mm/s] <input id="pf" value="100" size="4"></label><label>Czas obrotu drutu o 180° [s] <input id="pr" value="0.5" size="3"></label><label>Czas gięcia o 90° [s] <input id="pb" value="0.8" size="3"></label></div>
+<div class="bar"><label>Zmiana trzpienia: opuszczenie, obrót, podniesienie [s] <input id="ph" value="0.6" size="3"></label><label>Cofnięcie zabieraka [s] <input id="pz" value="0.2" size="3"></label><label>Cięcie [s] <input id="pc" value="0.4" size="3"></label></div>
+<div id="dst" style="margin-top:8px;font-size:12px;line-height:1.6">Wczytaj model, aby zobaczyć czas cyklu i wydajność.</div></div>
+<h2>1. Model</h2>
+<div class="box"><div class="bar" style="margin:0 0 8px"><label>Plik STEP / IGES: <input type="file" id="fl"></label></div>
+<details style="margin-bottom:8px"><summary style="font-size:13px">Nie możesz wybrać pliku? Wklej jego treść</summary><textarea id="pt" rows="4" style="width:100%;font:11px monospace" placeholder="Treść pliku .stp / .step / .igs / .iges"></textarea><button class="g s" id="bpt">Wczytaj wklejony tekst</button></details>
+Po wczytaniu pliku współrzędne wierzchołków pojawiają się poniżej (X Y Z, w punktach gięcia promień R osi). Można je też wpisać ręcznie.<br>
+<textarea id="co" rows="7" style="width:100%;font:12px monospace;margin-top:6px" placeholder="X Y Z [R]"></textarea>
+<div class="bar"><button id="bc">Wczytaj współrzędne</button><button id="exportCsv" class="g">Eksportuj współrzędne CSV</button><select id="wsel" style="display:none"></select></div><div class="note">Współrzędne załadowane z modelu – podgląd eksportu:</div><textarea id="modelCoords" rows="5" readonly style="width:100%;font:12px monospace;margin-top:5px"></textarea><div id="msg" class="note"></div></div>
+<h2>2. Konfiguracja narzędzi</h2>
+<div class="box"><div class="cfgw"><div><label>Typ: <select id="tt"><option selected>5</option></select></label>
+
+<div class="bar"><label>Ø drutu [mm] <input id="wd" value="3" size="4" step="0.1"></label><label>Ø głowicy <input id="hd" value="45" size="4"></label><label>Wysokość do styku drutu <input id="hh" value="35" size="4"></label><label>Szerokość obudowy <input id="hw" value="65" size="4"></label><label>Odległość tulei od głowicy [mm] <input id="sl" value="87" size="4"></label></div>
+<div class="note"><b>Trzpienie</b></div><table class="in" id="tp"></table><div class="bar"><button class="g s" id="ap">+ trzpień</button></div>
+<div id="pinSpacingCheck" class="note" role="status" style="margin:8px 0;padding:9px 11px;border:1px solid var(--bd);border-radius:8px">Sprawdzanie rozstawu kołków względem średnicy drutu…</div>
+<div class="note"><b>Bolce</b> (zabierak, kąt dodatni po prawej stronie wylatującego materiału)</div><table class="in" id="bp"></table><div class="bar"><button class="g s" id="ab">+ bolec</button></div>
+<div class="bar"><button id="ba">Zapisz konfigurację</button><button class="g" id="bo">Dopasuj najlepsze narzędzia do modelu</button></div><div id="cm" class="note"></div></div><div><canvas id="cv2" style="width:100%;height:300px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);touch-action:none;display:block"></canvas><div class="note">Podgląd głowicy z konfiguracji (przeciągnij, aby obrócić, kółko lub dwa palce przybliża). Oś X konfiguracji w dół ekranu, Y w prawo, kółka na obwodzie to tor bolca.</div></div></div></div>
+<h2>Program (L → obrót EW → gięcie BW; plus = w dół, minus = w górę)</h2>
+<table><thead><tr><th>Nr</th><th>L [mm]</th><th>EW [°]</th><th>BW [°]</th><th>L / EW</th><th>r wewn. [mm]</th><th>Trzpień</th><th>Czas [s]</th><th>Wykonalność</th><th>Kierunek</th></tr></thead><tbody id="tb"></tbody></table>
+<div class="box" id="stats"></div>
+<h2>3. Geometria (jak na maszynie)</h2>
+<div class="box"><div class="note">Edytuj L, EW, BW i r (promień wewnętrzny). Każdy wiersz opisuje podanie L, obrót drutu EW i gięcie BW. Ostatni wiersz bez BW oznacza końcówkę drutu. Wiersz z L = 0 i BW ≠ 0 jest prawidłowym gięciem bez podawania drutu. Gięcie dokładnie 180° można rozbić przyciskiem w tabeli programu. Plus BW = w dół, minus = w górę.</div><div class="geo-layout"><div><div class="geo-table-scroll"><table class="in" id="gt"></table></div>
+<div class="bar"><button class="g s" id="gf">Pobierz z modelu</button><button class="g s" id="ga">+ wiersz</button><button class="g s" id="gn">Nowy model</button><button id="gz">Zastosuj geometrię</button></div></div><div><canvas id="geoCv" class="geo-preview"></canvas><div class="note">Podgląd tworzonej geometrii 3D – aktualizuje się podczas edycji. Przeciągnij, aby obrócić; kółkiem przybliż.</div></div></div><div id="gm" class="note"></div></div>
+<div class="leg" id="leg"><span style="color:#e74c3c">■</span> kołek gnący aktywny S1 · <span style="color:#f1c40f">■</span> kołki pasywne D1/D2 · <span style="color:#3498db">■</span> kołki podpierające D3/D4 · <span style="color:#16a085">■</span> zacisk drutu · <span style="color:#27ae60">■</span> rolki podające · <span style="color:#2e86de">■</span> tarcza głowicy.</div>
+<div class="note">Przycisk „Zmień” przy wierszu przełącza kierunek obrotu w tym wierszu (równoważny zapis: EW ± 180° i odwrócony znak BW), a następne wiersze przeliczają się automatycznie, więc wyrób zostaje ten sam. Pod tabelą widać sprawdzenie kolizji dla wybranego wariantu. Przycisk kierunku +EW zmienia tylko konwencję znaku EW w tabeli. Kołek A o Ø0,6 odpowiada modelowi (promień wewnętrzny ≈ 0); w praktyce ostre gięcie Ø3 wymaga ostrej krawędzi albo większego promienia, do ustalenia z konstruktorem. Ramię kołka gnącego pominięto na rysunku dla czytelności.</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// Eksport CSV jest podpinany po zbudowaniu całego interfejsu.
+</script>
+<script src="https://cdn.jsdelivr.net/npm/occt-import-js@0.0.23/dist/occt-import-js.js"></script>
+<script>
+const V=(x,y,z)=>new THREE.Vector3(x,y,z),D=Math.PI/180,fmt=n=>(Math.round(n*10)/10).toString().replace(".",",");
+const ss=x=>x*x*(3-2*x),cl=x=>Math.min(1,Math.max(0,x));
+const wrap=a=>{a=((a+180)%360+360)%360-180;return a==-180?180:a};
+let ID=null,HAS=false,MV=false,tgt=V(14,0,-4);
+let sg=[],conv=-1,S=[],ROWS=[],T=0,TOT=0,bends=[];
+// Wiersze 180° są rozbijane wyłącznie na żądanie operatora.
+const split180Rows=new Set();
+// Domyślnie posuw L i obrót EW odbywają się równocześnie; ustawienie osobne jest per wiersz.
+const feedRotateSeparateByRow=[];
+const dur=s=>s.k=="FR"?Math.max(Math.max(.5,s.v/22),.7+Math.abs(s.a)/160):s.k=="F"?Math.max(.5,s.v/22):s.k=="R"?.7+Math.abs(s.v)/160:s.k=="B"?.7+Math.abs(s.v)/130:s.k=="K"?1.0:s.k=="H"?Math.max(.25,parseFloat(document.getElementById("ph")?.value)||0.6):1.2;
+const MAXSWEEP=100;
+function build(){
+  ROWS=ID.L.map((L,i)=>({L,e:i?wrap(ID.roll[i]+180*(sg[i]-sg[i-1])):null,bw:ID.th[i]*(sg[i]?-1:1),r:ID.R[i]}));
+  S=[];ROWS.forEach((r,i)=>{if(r.e!==null&&!feedRotateSeparateByRow[i])S.push({k:"FR",v:r.L,a:r.e,row:i});else{S.push({k:"F",v:r.L,row:i});if(r.e!==null)S.push({k:"R",v:r.e,row:i});}if(split180Rows.has(i)&&Math.abs(Math.abs(r.bw)-180)<1e-5){const sgn=Math.sign(r.bw),m={k:"B",v:sgn*90,r:r.r,row:i,part:1};S.push(m,{k:"K",row:i,headTurn:180,retract:true},{k:"B",v:sgn*90,r:r.r,row:i,part:2,a0:90,main:m,headPhi:m.headPhi===undefined?m.phi+Math.PI:m.headPhi+Math.PI});}else S.push({k:"B",v:r.bw,r:r.r,row:i});});
+  S.push({k:"F",v:ID.tail,row:ROWS.length},{k:"C",row:ROWS.length});
+  T=0;S.forEach(s=>{s.t0=T;T+=dur(s)});TOT=T+2.5;
+  bends=S.filter(s=>s.k=="B"&&s.part!=2);bends.forEach(b=>{b.sd=b.v>0?-1:1;const ds=b.r<2?b.sd:-b.sd;b.dl=ds>0?0:Math.PI;b.full=Math.abs(ROWS[b.row].bw);});
+  S.filter(s=>s.part==2).forEach(s=>{s.sd=s.main.sd;s.dl=s.main.dl;s.headPhi=s.main.phi+Math.PI;});
+  // Etapy obrotu głowicy H są dodawane po assignTools(), gdy znane są już pozycje kołków.
+}
+function pinPos(b,al){const rho=b.r+1.5+3,a=(b.sd<0?90+al:-90-al)*D;return [rho*Math.cos(a),b.sd*b.r+rho*Math.sin(a)];}
+function sim(tm){
+  let p=V(0,0,0),t=V(1,0,0),dv=V(0,1,0);const pts=[p.clone()];let idx=0,acc=0,feed=0,cutf=0;
+  for(let i=0;i<S.length;i++){
+    const s=S[i],f=cl((tm-s.t0)/dur(s));if(f<=0)break;idx=i;
+    if(s.k=="F"){const L=s.v*f,m=Math.max(1,Math.ceil(L/2)),p0=p.clone();for(let j=1;j<=m;j++)pts.push(p0.clone().addScaledVector(t,L*j/m));p=pts[pts.length-1].clone();feed+=L;}
+    else if(s.k=="FR"){const L=s.v*f,a=s.a*f*D,m=Math.max(1,Math.ceil(Math.max(L/2,Math.abs(s.a*f)/3))),p0=p.clone(),dv0=dv.clone(),n=new THREE.Vector3().crossVectors(t,dv0);for(let j=1;j<=m;j++){const u=j/m,ang=a*u,dir=dv0.clone().multiplyScalar(Math.cos(ang)).addScaledVector(n,Math.sin(ang));pts.push(p0.clone().addScaledVector(t,L*u));}p=pts[pts.length-1].clone();dv=dv0.clone().multiplyScalar(Math.cos(a)).addScaledVector(n,Math.sin(a));feed+=L;acc+=a;}
+    else if(s.k=="R"){const a=s.v*f*D,n=new THREE.Vector3().crossVectors(t,dv);dv=dv.clone().multiplyScalar(Math.cos(a)).addScaledVector(n,Math.sin(a));acc+=a;}
+    else if(s.k=="B"){const sgn=Math.sign(s.v),tool=bends.find(x=>x.row===s.row),available=tool&&Number.isFinite(tool.amax)?tool.amax:Math.abs(s.v),pieceStart=s.a0||0,pieceEnd=pieceStart+Math.abs(s.v),effectiveEnd=Math.min(pieceEnd,available),effectiveAngle=Math.max(0,effectiveEnd-pieceStart),th=effectiveAngle*f*D,c0=dv.clone().multiplyScalar(sgn),t0=t.clone(),R=s.r,q=p.clone().addScaledVector(c0,R),m=Math.max(1,Math.ceil(effectiveAngle*f/4));
+      for(let j=1;j<=m;j++){const a=th*j/m;pts.push(q.clone().addScaledVector(c0,-R*Math.cos(a)).addScaledVector(t0,R*Math.sin(a)));}
+      p=pts[pts.length-1].clone();t=t0.clone().multiplyScalar(Math.cos(th)).addScaledVector(c0,Math.sin(th));const c2=c0.clone().multiplyScalar(Math.cos(th)).addScaledVector(t0,-Math.sin(th));dv=c2.multiplyScalar(sgn);}
+    else if(s.k=="K"){}else cutf=f;
+    if(f<1)break;
+  }
+  const n=new THREE.Vector3().crossVectors(t,dv);
+  return {w:pts.map(v=>{const d=v.clone().sub(p);return V(d.dot(t),-d.dot(dv),-d.dot(n));}),idx,acc,feed,cutf};
+}
+function tools(tm){
+  const b0=bends[0],p0=pinPos(b0,0);let st={dl:b0.dl,cy:b0.sd*b0.r,px:p0[0],py:p0[1],lift:0},end=null,bi=-1,sup=false,clamp=1;
+  for(const s of S){
+    const f=cl((tm-s.t0)/dur(s));if(f<=0)break;
+    if(s.k=="F"||s.k=="FR"){st=end||st;clamp=0;}
+    else if(s.k=="B"){if(s.part!=2)bi++;const e=Math.min(ss(cl(f/.12)),ss(cl((1-f)/.12))),p=pinPos(s,Math.abs(s.v)*f),q=pinPos(s,Math.abs(s.v));
+      st={dl:s.dl,cy:s.sd*s.r,px:p[0],py:p[1],lift:e};end={dl:s.dl,cy:s.sd*s.r,px:q[0],py:q[1],lift:0};sup=f<1;clamp=1;}
+    else if(s.k==="R"){st=end||st;clamp=1;}
+    else if(s.k==="H"){const nb=s.target,e=ss(f),ps=pinPos(nb,0),pe=end||st;
+      st={dl:pe.dl+(nb.dl-pe.dl)*e,cy:pe.cy+(nb.sd*nb.r-pe.cy)*e,px:pe.px+(ps[0]-pe.px)*e,py:pe.py+(ps[1]-pe.py)*e,lift:0};if(f>=1)end=st;clamp=1;}
+    else{st=end||st;clamp=1;}
+    if(f<1)break;
+  }
+  return Object.assign({sup,clamp},st);
+}
+function check(ig,all){
+  const wr=((ID&&ID.wd)||3)/2,hd=CFG?CFG.hd:45,L=[],seen={};let r;
+  const bad=(m,row)=>{if(!all)return {ok:false,msg:m};const k=row+"|"+m.split("(")[0];if(!seen[k]){seen[k]=1;L.push({row,msg:m});}return null;};
+  for(let tm=0;tm<=T;tm+=0.1){
+    const s=sim(tm),w=s.w,st=S[s.idx],pts=[],hp=headPose(tm),rw="wiersz "+(st.row+1)+", "+({F:"podanie",R:"obrót EW",H:"obrót głowicy",B:"gięcie",K:"obrót głowicy",C:"cięcie"})[st.k]+" t="+tm.toFixed(1);
+    const bb=S.slice(s.idx).find(x=>x.k=="B")||bends[bends.length-1],pb=S.slice(0,s.idx+1).reverse().find(x=>x.k=="B");
+    for(let i=0;i<w.length-1;i++){const n=Math.max(1,Math.ceil(w[i].distanceTo(w[i+1])));for(let j=0;j<n;j++)pts.push(w[i].clone().lerp(w[i+1],j/n));}
+    pts.push(w[w.length-1]);
+    const c=Math.cos(hp.phi),sn=Math.sin(hp.phi);
+    for(const p of pts){
+      if(Math.hypot(p.x-hp.Ox,p.y-hp.Oy)<hd/2+wr*.5&&p.z<hp.dz-.05){r=bad("drut dotyka korpusu głowicy Ø"+hd+" ("+rw+")",st.row);if(r)return r;}
+      const rad=Math.hypot(p.y,p.z);if(p.x>SL-2&&p.x<SL+75&&rad>2.2&&rad<11.2){r=bad("kolizja z zaciskiem drutu ("+rw+")",st.row);if(r)return r;}
+      for(let i=0;i<CFG.pins.length;i++){if(i==bb.pk||(pb&&i==pb.pk))continue;const q=CFG.pins[i],m=[q.y,-q.x],px=hp.Ox+c*m[0]-sn*m[1],py=hp.Oy+sn*m[0]+c*m[1],base=-wr+hp.dz,top=base+q.h,pr=q.d/2-q.g;
+        if(Math.hypot(p.x-px,p.y-py)<wr+pr-.1&&p.z-wr<top&&p.z+wr>base){r=bad("kolizja z trzpieniem "+q.id+" ("+rw+"): "+(i==bb.pk?"promień trzpienia za duży względem promienia gięcia":"drut przechodzi przez trzpień"),st.row);if(r)return r;}}
+    }
+  }
+  if(!ig)for(const b of bends)if(b.dist!==undefined&&(Math.abs(b.pr-(b.r-wr))>0.6||Math.abs(b.dist-b.r)>0.6)){r=bad("trzpień "+b.tool.split(" ")[0]+" nie realizuje promienia gięcia (wiersz "+(b.row+1)+"): "+b.tool.split("✗")[1],b.row);if(r)return r;}
+  if(all&&L.length)return {ok:false,msg:L[0].msg,list:L};
+  return {ok:true,msg:"bez kolizji z głowicą, trzpieniami i zaciskiem",list:[]};
+}
+/*RENDER*/
+const lab=s=>s.k=="FR"?"jednoczesny posuw "+fmt(s.v)+" mm + obrót drutu "+fmt(s.a*conv)+"°":s.k=="F"?"podanie "+fmt(s.v)+" mm":s.k=="R"?"obrót drutu "+fmt(s.v*conv)+"°, głowica z zabierakiem opuszczone ustawiają trzpień":s.k=="B"?"gięcie "+fmt(Math.abs(s.v))+"° "+(s.v>0?"w dół":"w górę")+" na trzpieniu "+(s.tool||"")+", zabierak podpiera drut, potem się cofa":s.k=="K"?"obrót głowicy z kołkami o 180° (ruch mechaniczny, bez obrotu EW)":s.k=="H"?"ustawienie głowicy: obrót kołków pasywnych i podporowych, niezależnie od EW":"nóż odcina wyrób";
+const tb=document.getElementById("tb"),stats=document.getElementById("stats"),cvb=document.getElementById("cvb");
+function table(){
+  const c=check(false,true);evalRows(c);
+  tb.innerHTML=ROWS.map((r,i)=>{const canSplit=Math.abs(Math.abs(r.bw)-180)<1e-5,split=split180Rows.has(i);const motion=`<td><select class="motion-pick" data-row="${i}" style="max-width:105px"><option value="0" ${!feedRotateSeparateByRow[i]?"selected":""}>Razem</option><option value="1" ${feedRotateSeparateByRow[i]?"selected":""}>Osobno</option></select></td>`;const common=`${motion}<td>${fmt(Math.max(0,r.r-ID.wd/2))}</td><td style="font-size:11px">${r.tool||"–"}</td><td id="t${i}">–</td><td style="font-size:11px;text-align:left">${r.issues&&r.issues.length?'<span class="bad">'+r.issues.join("; ")+"</span>":'<span class="ok">OK</span>'}<br><span style="color:var(--mut)">${r.info||""}</span></td>`;const action=`<button class="g s" onclick="flip(${i})">Zmień</button> ${canSplit?`<button class="g s" onclick="toggleSplit180(${i})">${split?"Cofnij rozbicie":"Rozbij 180°"}</button>`:""}`;if(split){return `<tr id="r${i}"><td>${i+1}.1</td><td>${fmt(r.L)}</td><td>${r.e===null?"–":fmt(r.e*conv)}</td><td>${fmt(Math.sign(r.bw)*90)}<small>${r.bw>0?"w dół":"w górę"}</small></td>${common}<td>${action}</td></tr><tr id="r${i}b"><td>${i+1}.2</td><td>0</td><td>0</td><td>${fmt(Math.sign(r.bw)*90)}<small>${r.bw>0?"w dół":"w górę"}</small></td>${motion}<td>${fmt(Math.max(0,r.r-ID.wd/2))}</td><td>${r.tool||"–"}</td><td>–</td><td style="font-size:11px;text-align:left">Drugi etap po osobnym obrocie głowicy o 180°; L = 0</td><td>${action}</td></tr>`;}return `<tr id="r${i}"><td>${i+1}</td><td>${fmt(r.L)}</td><td>${r.e===null?"–":fmt(r.e*conv)}</td><td>${fmt(r.bw)}<small>${r.bw>0?"w dół":"w górę"}</small></td>${common}<td>${action}</td></tr>`;}).join("")+`<tr id="r${ROWS.length}"><td>${ROWS.length+1}</td><td>${fmt(ID.tail)}</td><td>–</td><td>–</td><td>–</td><td></td><td id="t${ROWS.length}">–</td><td></td><td></td></tr>`;
+  const es=ROWS.slice(1).map(r=>r.e),mx=Math.max(...es.map(Math.abs)),sum=es.reduce((a,b)=>a+Math.abs(b),0);
+  let run=0,best=0,sgn=0;es.forEach(e=>{const g=Math.sign(e);run=g==sgn?run+e:e;sgn=g;best=Math.max(best,Math.abs(run));});
+  stats.innerHTML=`Obroty: największy <b>${fmt(mx)}°</b>, największy ciągły w jedną stronę <b>${fmt(best)}°</b>, suma <b>${fmt(sum)}°</b>.<br>Kolizje: <span class="${c.ok?"ok":"bad"}">${c.ok?"OK: "+c.msg:"UWAGA ("+c.list.length+"): "+c.list.map(x=>x.msg).join("; ")}</span><br>Wykonalne gięcia: <b>${ROWS.filter(r=>!r.issues.length).length} z ${ROWS.length}</b>`;
+  cvb.textContent="Kierunek +EW: "+(conv>0?"zgodnie z zegarem (patrząc od strony szpuli)":"przeciwnie do zegara (patrząc od strony szpuli)");
+  calcPerf();prevRow=-1;
+}
+tb.addEventListener("change",e=>{const el=e.target.closest(".motion-pick");if(!el)return;const i=Number(el.dataset.row);feedRotateSeparateByRow[i]=el.value==="1";build();assignTools();table();tm=0;play=false;pp.textContent="Odtwórz";});
+function flip(i){sg[i]^=1;build();assignTools();table();tm=0;}
+function toggleSplit180(i){if(Math.abs(Math.abs(ROWS[i].bw)-180)>1e-5)return;if(split180Rows.has(i))split180Rows.delete(i);else split180Rows.add(i);build();assignTools();table();tm=0;play=false;pp.textContent="Odtwórz";}
+cvb.onclick=()=>{conv=-conv;table();};
+const cv=document.getElementById("cv"),r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+r.setPixelRatio(Math.min(devicePixelRatio,2));r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;
+const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(32,1,1,1000);
+sc.add(new THREE.HemisphereLight(0xffffff,0x6a7585,.75));
+const dl=new THREE.DirectionalLight(0xffffff,1.0);dl.position.set(50,110,130);dl.castShadow=true;dl.shadow.mapSize.set(2048,2048);
+Object.assign(dl.shadow.camera,{left:-110,right:110,top:110,bottom:-110,near:10,far:400});dl.shadow.bias=-.0004;sc.add(dl);
+const fl=new THREE.DirectionalLight(0xbcd0ff,.35);fl.position.set(-80,-40,90);sc.add(fl);
+const M=(c,m=.6,ro=.4,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,metalness:m,roughness:ro},o));
+const add=(g,m,x,y,z,parent=sc)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;parent.add(o);return o;};
+const cz=(rad,h,seg=40)=>new THREE.CylinderGeometry(rad,rad,h,seg).rotateX(Math.PI/2);
+const cx=(rad,h,seg=32)=>new THREE.CylinderGeometry(rad,rad,h,seg).rotateZ(Math.PI/2);
+// tekstura tarczy
+const tc=document.createElement("canvas");tc.width=tc.height=512;const g=tc.getContext("2d");
+const gr=g.createRadialGradient(256,256,20,256,256,256);gr.addColorStop(0,"#dfe4ea");gr.addColorStop(1,"#aeb6c1");g.fillStyle=gr;g.fillRect(0,0,512,512);
+for(let i=6;i<250;i+=5){g.strokeStyle="rgba(60,70,85,"+(.08+.1*((i*7)%3)/3)+")";g.beginPath();g.arc(256,256,i,0,7);g.stroke();}
+g.fillStyle="rgba(30,40,55,.8)";g.font="bold 34px sans-serif";g.textAlign="center";g.fillText("Ø34",256,452);g.beginPath();g.arc(256,70,12,0,7);g.fill();
+const dtex=new THREE.CanvasTexture(tc);
+// płyta, korpus, tarcza
+const disc=new THREE.Group();sc.add(disc);
+// kołki
+const BASE=-4.5,pinGeo=n=>new THREE.CylinderGeometry(1,1,1,28,1).rotateX(Math.PI/2);
+const mkPin=(rad,col,parent)=>{const m=add(pinGeo(),M(col,.55,.28),0,0,0,parent);m.userData.rad=rad;return m;};
+const pinA=mkPin(.3,0xf1c40f,disc),pinB=mkPin(1.5,0xe67e22,disc),pinC=mkPin(3,0xe74c3c,sc);
+pinA.position.set(0,1.5,0);pinB.position.set(0,-3,0);[pinA,pinB,pinC].forEach(m=>m.visible=false);
+const setPin=(m,x,y,lift)=>{const tip=-1.8+4.8*lift,h=tip-BASE,rr=m.userData.rad;m.scale.set(rr,rr,h);m.position.z=BASE+h/2;if(x!==null){m.position.x=x;m.position.y=y;}};
+// drut, nóż, zabierak, rolki
+const copper=M(0xc98a6a,.75,.3);
+const wire=add(cx(1.5,320),copper,160,0,0);
+
+const car=new THREE.Group();car.position.x=114;sc.add(car);
+const jawM=M(0x16a085,.6,.35),jawU=add(new THREE.BoxGeometry(16,7,10),jawM,24,5,0,car),jawD=add(new THREE.BoxGeometry(16,7,10),jawM,24,-5,0,car);
+[[19,1],[29,1],[19,-1],[29,-1]].forEach(a=>add(cz(1.6,1.4,16),M(0x2c333d,.8,.3),a[0],a[1]*5,5.6,car));
+add(cx(10.5,22,48),M(0x8e44ad,.55,.4),47,0,0,car);add(cx(11,3,48),M(0x6c3483,.6,.4),36.5,0,0,car);
+add(new THREE.BoxGeometry(22,3.6,6),M(0xf39c12,.4,.4),47,10.6,0,car);
+const rU=add(cz(8,10),M(0x27ae60,.5,.4),215,9.5,0),rD=add(cz(8,10),M(0x27ae60,.5,.4),215,-9.5,0);
+add(new THREE.BoxGeometry(30,3,16),M(0x2c333d,.5,.5),215,18.5,-3);add(new THREE.BoxGeometry(30,3,16),M(0x2c333d,.5,.5),215,-18.5,-3);
+let part=null,az=.3,el=.62,dist=200;
+function cm(){cam.position.set(tgt.x+dist*Math.cos(el)*Math.sin(az),tgt.y+dist*Math.sin(el),tgt.z+dist*Math.cos(el)*Math.cos(az));cam.lookAt(tgt);}
+let down=false,lx=0,ly=0,panMode=false;
+cv.addEventListener("contextmenu",e=>e.preventDefault());
+cv.addEventListener("pointerdown",e=>{down=true;panMode=e.button===1||e.button===2||e.shiftKey;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId)});
+cv.addEventListener("pointerup",()=>{down=false;panMode=false;});
+cv.addEventListener("pointercancel",()=>{down=false;panMode=false;});
+cv.addEventListener("pointermove",e=>{if(!down)return;const dx=e.clientX-lx,dy=e.clientY-ly;
+  if(panMode){const k=dist/(cv.clientHeight||400)*1.45,right=V(Math.cos(az),0,-Math.sin(az)),up=V(-Math.sin(el)*Math.sin(az),Math.cos(el),-Math.sin(el)*Math.cos(az));
+    tgt.addScaledVector(right,-dx*k).addScaledVector(up,dy*k);
+  }else{az-=dx*.01;el=Math.max(-1.3,Math.min(1.5,el+dy*.01));}
+  lx=e.clientX;ly=e.clientY;});
+let cameraSized=false;function size(){const w=Math.max(1,cv.clientWidth),h=Math.max(1,cv.clientHeight);r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();if(!cameraSized){dist=w<500?270:200;cameraSized=true;}}
+addEventListener("resize",size);addEventListener("orientationchange",()=>setTimeout(size,180));size();
+let tm=0,play=true,last=performance.now(),prevRow=-1;
+const pp=document.getElementById("pp"),slider=document.getElementById("sc"),spd=document.getElementById("sp"),stepEl=document.getElementById("step");
+pp.onclick=()=>{play=!play;pp.textContent=play?"Pauza":"Odtwórz"};
+slider.oninput=()=>{tm=slider.value/1000*TOT;play=false;pp.textContent="Odtwórz"};
+document.getElementById("v1").onclick=()=>{az=0;el=0};document.getElementById("v2").onclick=()=>{az=.3;el=.62};
+function frame(now){
+  const dt=Math.min(.1,(now-last)/1000);last=now;
+  if(!HAS){bolts.forEach(m=>{const a=m.userData.ang;m.position.set(-m.userData.R*Math.cos(a),m.userData.R*Math.sin(a),m.userData.z);});stepEl.textContent="Wgraj model (STEP, IGES) albo wpisz współrzędne.";cm();r.render(sc,cam);requestAnimationFrame(frame);return;}
+  if(play){tm+=dt*parseFloat(spd.value);if(tm>=TOT)tm=0;slider.value=Math.round(tm/TOT*1000);}
+  const tt=Math.min(tm,T),s=sim(tt),tl=tools(tt);
+  if(part){sc.remove(part);part.geometry.dispose();}
+  if(s.w.length>1){part=new THREE.Mesh(new THREE.TubeGeometry((()=>{const p=new THREE.CurvePath();for(let i=1;i<s.w.length;i++)p.add(new THREE.LineCurve3(s.w[i-1],s.w[i]));return p;})(),Math.max(8,s.w.length*3),(ID.wd||3)/2,16,false),copper);part.castShadow=part.receiveShadow=true;
+    const fall=ss(cl((tm-T+1.2)/1.2));part.position.set(-14*fall,-36*fall,0);part.visible=!MV;sc.add(part);}
+  const hp=headPose(tt);headG.position.set(hp.Ox,hp.Oy,hp.dz);headG.rotation.z=hp.phi;
+  bolts.forEach((m,i)=>{const bo=CFG.bolts[i],b0=CFG.bolts[0];let x=hp.bx,y=hp.by;if(i>0){const a0=Math.atan2(hp.by-hp.Oy,-(hp.bx-hp.Ox)),a=a0+(bo.ang-b0.ang)*D;x=hp.Ox-bo.r*Math.cos(a);y=hp.Oy+bo.r*Math.sin(a);}m.position.set(x,y,m.userData.z+hp.bz);});
+  if(bolts[0])bolts[0].material.color.set(hp.slip?0xff2020:0xe74c3c);
+  if(!MV)updDist(hp,s.idx);else dimG.visible=false;
+  disc.rotation.z=tl.dl;setPin(pinA,null,null,tl.lift);setPin(pinB,null,null,tl.lift);setPin(pinC,tl.px,tl.py,tl.lift);
+  car.rotation.x=-s.acc;const gap=(1-tl.clamp)*1.4;jawU.position.y=5+gap;jawD.position.y=-5-gap;
+  jawM.color.set(tl.sup?0xf39c12:0x16a085);jawM.emissive.set(tl.sup?0x7a3d00:0x000000);
+  rU.rotation.z=-s.feed/8;rD.rotation.z=s.feed/8;
+
+  const done=tm>=T,ri=S[s.idx].row;
+  stepEl.textContent=done?"Gotowe: wyrób odcięty":"Wiersz "+(ri+1)+" · "+lab(S[s.idx])+(hp.slip?" · BOLEC ŚLIZGA SIĘ: odcinek za krótki":"");
+  if(ri!==prevRow){for(let i=0;i<=ROWS.length;i++){const e=document.getElementById("r"+i);if(e)e.className=i==ri?"on":"";const e2=document.getElementById("r"+i+"b");if(e2)e2.className=i==ri?"on":"";}prevRow=ri;}
+  if(done)az+=dt*.3;
+  cm();r.render(sc,cam);requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+<script>
+function buildChain(segs,wd){
+  const key=v=>v.x.toFixed(1)+","+v.y.toFixed(1)+","+v.z.toFixed(1),cnt={};
+  segs.forEach(s=>{[s.a,s.b].forEach(v=>cnt[key(v)]=(cnt[key(v)]||0)+1)});
+  let cur=segs.find(s=>cnt[key(s.a)]==1||cnt[key(s.b)]==1);if(!cur)throw new Error("Nie udało się ułożyć osi drutu w jeden ciąg");
+  let left=segs.filter(s=>s!=cur);if(cnt[key(cur.a)]!=1){const x=cur.a;cur.a=cur.b;cur.b=x;}
+  const chain=[cur];
+  while(left.length){const e=chain[chain.length-1].b,nx=left.find(s=>key(s.a)==key(e)||key(s.b)==key(e));if(!nx)break;if(key(nx.b)==key(e)){const x=nx.a;nx.a=nx.b;nx.b=x;}chain.push(nx);left=left.filter(s=>s!=nx);}
+  if(left.length)throw new Error("Linie i łuki z pliku nie tworzą jednej ciągłej osi drutu (połączono "+chain.length+" z "+segs.length+" elementów).");
+  const St=chain.filter(s=>s.R===undefined),R=chain.filter(s=>s.R!==undefined).map(s=>s.R);
+  if(St.length!=R.length+1)throw new Error("Oś drutu musi składać się z odcinków prostych i łuków na przemian (znaleziono "+St.length+" odcinków i "+R.length+" łuków)");
+  const m0=fromChain(St,R,wd||0);m0.wdFromModel=!!wd;return m0;
+}
+function fromChain(St,R,wd){
+  const n=R.length,d=St.map(s=>s.dir?s.dir.clone().normalize():s.b.clone().sub(s.a)),L=St.map(s=>s.b.distanceTo(s.a));d.forEach(v=>v.normalize());
+  const th=[],cs=[],nn=[],roll=[0];
+  for(let i=0;i<n;i++){th.push(Math.acos(Math.max(-1,Math.min(1,d[i].dot(d[i+1]))))/D);const c=d[i+1].clone().sub(d[i]).normalize();cs.push(c);nn.push(new THREE.Vector3().crossVectors(d[i],c));}
+  for(let i=1;i<n;i++){const ce=new THREE.Vector3().crossVectors(nn[i-1],d[i]).normalize();roll.push(Math.atan2(new THREE.Vector3().crossVectors(ce,cs[i]).dot(d[i]),ce.dot(cs[i]))/D);}
+  return {L:L.slice(0,n),tail:L[n],th,R,roll,wd,St,cs,d};
+}
+function describeFile(t,kind){
+  if(kind=="iges"){const D=t.split(/\r?\n/).filter(l=>l[72]=="D"),c={};for(let i=0;i<D.length;i+=2){const n=+D[i].slice(0,8);c[n]=(c[n]||0)+1;}
+    const nm={110:"linii",100:"łuków",126:"krzywych B-sklejanych",128:"powierzchni B-sklejanych",144:"powierzchni przyciętych",120:"powierzchni obrotowych",122:"powierzchni walcowych",102:"krzywych złożonych"};
+    return "Plik IGES zawiera: "+Object.keys(nm).filter(k=>c[k]).map(k=>c[k]+" "+nm[k]).join(", ")+". To opis powierzchni lub bryły części, a nie oś gniętego drutu.";}
+  const c={};(t.match(/B_SPLINE_SURFACE_WITH_KNOTS|CYLINDRICAL_SURFACE|TOROIDAL_SURFACE|PLANE\(|CONICAL_SURFACE|SPHERICAL_SURFACE/g)||[]).forEach(k=>c[k]=(c[k]||0)+1);
+  return "Plik STEP zawiera: "+(Object.keys(c).map(k=>c[k]+" × "+k.replace("(","")).join(", ")||"brak powierzchni")+". Rozpoznaję drut z walców i torusów albo z rurek B-sklejanych.";
+}
+let WIRES=[];
+function bezPt(c,u){const n=c.length-1;let r=V(0,0,0);for(let i=0;i<=n;i++){let b=1;for(let k=0;k<i;k++)b*=(n-k)/(k+1);r.addScaledVector(c[i],b*Math.pow(1-u,n-i)*Math.pow(u,i));}return r;}
+function parseSTEPBSLegacy(E){
+  const refs=s=>(s.match(/#\d+/g)||[]).map(x=>+x.slice(1)),pt=i=>{const m=E[i].match(/\(([-\d.E+]+),([-\d.E+]+),([-\d.E+]+)\)\)$/);return V(+m[1],+m[2],+m[3]);};
+  const uq={},rads=[];
+  for(const k in E){const e=E[k];if(!e.startsWith("B_SPLINE_SURFACE"))continue;
+    const m=e.match(/B_SPLINE_SURFACE(?:_WITH_KNOTS)?\([^,]*,(\d+),(\d+),\((.*?)\),\./);if(!m)continue;const rows=m[3].match(/\((?:#\d+,?)+\)/g);if(!rows)continue;
+    const G=rows.map(r=>refs(r).map(pt));if(G.length<2||G.some(r=>r.length!==G[0].length)||G[0].length<2)continue;
+    const cen=G.map(ring=>{const ap=V(0,0,0);ring.forEach(p=>ap.add(p));ap.multiplyScalar(1/ring.length);
+      const rr=ring.reduce((a,p)=>a+p.distanceTo(ap),0)/ring.length;rads.push(rr);return ap;});
+    const key=v=>v.x.toFixed(1)+","+v.y.toFixed(1)+","+v.z.toFixed(1),ka=key(cen[0]),kb=key(cen[cen.length-1]),kk=ka<kb?ka+"|"+kb:kb+"|"+ka;if(!uq[kk])uq[kk]={c:cen,ka,kb};}
+  const segs=Object.values(uq);if(segs.length<3)throw new Error("W pliku STEP nie znalazłem rurek ani walców");
+  rads.sort((a,b)=>a-b);const wd=2*rads[rads.length>>1],adj={};
+  segs.forEach(s=>{(adj[s.ka]=adj[s.ka]||[]).push(s);(adj[s.kb]=adj[s.kb]||[]).push(s);});
+  const used=new Set(),paths=[];
+  const starts=Object.keys(adj).filter(k=>adj[k].length==1);
+  const walk=k0=>{const path=[];let k=k0;for(;;){const s=adj[k].find(x=>!used.has(x));if(!s)break;used.add(s);let c=s.c;if(s.ka!=k)c=c.slice().reverse();path.push(c);k=s.ka==k?s.kb:s.ka;}return path;};
+  starts.forEach(k=>{if(adj[k].some(x=>!used.has(x)))paths.push(walk(k));});
+  if(!paths.length)throw new Error("Rurki tworzą zamkniętą pętlę, brak końców drutu");
+  return paths.map(p=>pathToChain(p,wd)).sort((a,b)=>b.th.length-a.th.length);
+}
+function pathToChain(path,wd){
+  const el=[];
+  path.forEach(c=>{const last=c.length-1,d=c[last].clone().sub(c[0]),L=d.length(),col=c.every(p=>V(0,0,0).crossVectors(p.clone().sub(c[0]),d.clone().normalize()).length()<1e-3);
+    const T0=c[1].clone().sub(c[0]).normalize(),T1=c[last].clone().sub(c[last-1]).normalize();
+    if(col)el.push({k:"S",a:c[0],b:c[last],dir:T0,L});
+    else{let s=0,pr=bezPt(c,0);for(let i=1;i<=40;i++){const p=bezPt(c,i/40);s+=p.distanceTo(pr);pr=p;}
+      const th=Math.acos(Math.max(-1,Math.min(1,T0.dot(T1)))),n=V(0,0,0).crossVectors(T0,T1).normalize();el.push({k:"A",a:c[0],b:c[last],T0,T1,th,R:s/th,n});}});
+  // scal sąsiednie proste i łuki współpłaszczyznowe
+  const m=[];el.forEach(e=>{const l=m[m.length-1];
+    if(l&&l.k=="S"&&e.k=="S"&&l.dir.dot(e.dir)>.99999){l.b=e.b;l.L+=e.L;}
+    else if(l&&l.k=="A"&&e.k=="A"&&Math.abs(l.R-e.R)<.02&&l.n.dot(e.n)>.9999){l.th+=e.th;l.T1=e.T1;l.b=e.b;}
+    else m.push(Object.assign({},e));});
+  const St=[],R=[];const zero=(p,d)=>({a:p.clone(),b:p.clone(),dir:d.clone()});
+  m.forEach((e,i)=>{const pv=St.length?m[i-1]:null;
+    if(e.k=="S"){St.push({a:e.a,b:e.b,dir:e.dir});}
+    else{if(!pv||pv.k=="A")St.push(zero(e.a,e.T0));R.push(e.R);}});
+  if(m[m.length-1].k=="A"){const e=m[m.length-1];St.push(zero(e.b,e.T1));}
+  // tangent points proste: skróć o nic, bo łuki już zaczynają się w końcach prostych
+  const m1=fromChain(St,R,wd);m1.wdFromModel=true;return m1;
+}
+function parseCoords(txt,wd){
+  const rows=txt.trim().split(/\n+/).map(l=>l.trim().split(/[\s;,]+/).map(Number)).filter(r=>r.length>=3&&r.every(x=>!isNaN(x)));
+  if(rows.length<3)throw new Error("Potrzebne min. 3 punkty (X Y Z, w punktach gięcia dodatkowo promień R)");
+  const P=rows.map(r=>V(r[0],r[1],r[2])),R=rows.slice(1,-1).map(r=>r[3]||wd),n=R.length,d=[];
+  for(let i=0;i<=n;i++)d.push(P[i+1].clone().sub(P[i]).normalize());
+  const T=R.map((r,i)=>r*Math.tan(Math.acos(Math.max(-1,Math.min(1,d[i].dot(d[i+1]))))/2)),St=[];
+  for(let i=0;i<=n;i++)St.push({a:P[i].clone().addScaledVector(d[i],i?T[i-1]:0),b:P[i+1].clone().addScaledVector(d[i],-(i<n?T[i]:0))});
+  return fromChain(St,R,wd);
+}
+
+function stepFields(src){
+  let s=src.trim();if(s[0]==="("&&s[s.length-1]===")")s=s.slice(1,-1);
+  const out=[];let depth=0,q=false,start=0;
+  for(let i=0;i<s.length;i++){const c=s[i];if(c==="'")q=!q;else if(!q&&c==="(")depth++;else if(!q&&c===")")depth--;else if(!q&&c===","&&depth===0){out.push(s.slice(start,i).trim());start=i+1;}}
+  out.push(s.slice(start).trim());return out;
+}
+function stepRefs(src){return [...src.matchAll(/#(\d+)/g)].map(m=>+m[1]);}
+function stepPoint(E,id){const e=E[id]||"";if(!e.startsWith("CARTESIAN_POINT"))return null;const f=stepFields(e.slice(e.indexOf("(")));const a=stepFields(f[1]||"").map(Number);return a.length>=3?V(a[0],a[1],a[2]):null;}
+function stepSpline(E,id){
+  const e=E[id]||"";if(!e.startsWith("B_SPLINE_CURVE_WITH_KNOTS"))return null;
+  const f=stepFields(e.slice(e.indexOf("("))),degree=+f[1],cp=stepRefs(f[2]||"").map(k=>stepPoint(E,k));
+  const mult=stepFields(f[6]||"").map(Number),kv=stepFields(f[7]||"").map(Number),U=[];
+  mult.forEach((m,i)=>{for(let j=0;j<m;j++)U.push(kv[i]);});
+  if(cp.length<degree+1||U.length!==cp.length+degree+1)return null;
+  const n=cp.length-1;
+  const evalU=u=>{
+    let k=degree;while(k<n&&u>=U[k+1])k++;
+    const d=[];for(let j=0;j<=degree;j++)d[j]=cp[k-degree+j].clone();
+    for(let r=1;r<=degree;r++)for(let j=degree;j>=r;j--){
+      const lo=U[k-degree+j],hi=U[k+1+j-r],a=Math.abs(hi-lo)<1e-12?0:(u-lo)/(hi-lo);
+      d[j]=d[j-1].clone().multiplyScalar(1-a).addScaledVector(d[j],a);
+    }
+    return d[degree];
+  };
+  return {min:U[degree],max:U[n+1],eval:evalU};
+}
+function stepCurveSamples(E,id,cache){
+  if(cache.has(id))return cache.get(id).map(p=>p.clone());
+  const e=E[id]||"",f=stepFields(e.slice(e.indexOf("(")));let out=[];
+  if(e.startsWith("TRIMMED_CURVE")){
+    const base=stepRefs(f[1]||"")[0],a=stepPoint(E,stepRefs(f[2]||"")[0]),b=stepPoint(E,stepRefs(f[3]||"")[0]),same=f[4]===".T.";
+    const be=E[base]||"";
+    if(be.startsWith("LINE"))out=[a,b];
+    else{
+      const spline=stepSpline(E,base);
+      if(spline&&a&&b){
+        const raw=Array.from({length:241},(_,i)=>spline.eval(spline.min+(spline.max-spline.min)*i/240));
+        let ia=0,ib=raw.length-1,da=Infinity,db=Infinity;
+        raw.forEach((p,i)=>{const x=p.distanceToSquared(a),y=p.distanceToSquared(b);if(x<da){da=x;ia=i;}if(y<db){db=y;ib=i;}});
+        const lo=Math.min(ia,ib),hi=Math.max(ia,ib);out=raw.slice(lo,hi+1);
+        if(ia>ib)out.reverse();
+      }
+    }
+  }else if(e.startsWith("B_SPLINE_CURVE_WITH_KNOTS")){
+    const sp=stepSpline(E,id);if(sp)out=Array.from({length:81},(_,i)=>sp.eval(sp.min+(sp.max-sp.min)*i/80));
+  }else if(e.startsWith("LINE")){
+    const refs=stepRefs(f[1]||"");const p=stepPoint(E,refs[0]),vec=E[refs[1]]||"",vr=stepRefs(vec),dir=stepPoint(E,vr[0]),len=+(stepFields(vec.slice(vec.indexOf("(")))[1]||1);if(p&&dir)out=[p,p.clone().addScaledVector(dir,len)];
+  }
+  if(out.length>1)cache.set(id,out.map(p=>p.clone()));return out;
+}
+function fitCurveArc(points){
+  if(points.length<3)return null;const a=points[0],b=points[Math.floor((points.length-1)/2)],c=points[points.length-1];
+  const u=b.clone().sub(a),v=c.clone().sub(a),n=new THREE.Vector3().crossVectors(u,v),n2=n.lengthSq();if(n2<1e-10)return null;
+  const center=a.clone().addScaledVector(new THREE.Vector3().crossVectors(v,n),u.lengthSq()/(2*n2)).addScaledVector(new THREE.Vector3().crossVectors(n,u),v.lengthSq()/(2*n2));
+  const radius=center.distanceTo(a);if(!(radius>0.05&&Number.isFinite(radius)))return null;
+  let maxDev=0;points.forEach(p=>{maxDev=Math.max(maxDev,Math.abs(center.distanceTo(p)-radius));});
+  const va=a.clone().sub(center).normalize(),vc=c.clone().sub(center).normalize(),angle=Math.acos(Math.max(-1,Math.min(1,va.dot(vc))))/D;
+  if(maxDev>Math.max(.18,radius*.025)||angle<1||angle>175)return null;
+  return {start:a,end:c,center,radius,angle,cs:center.clone().sub(a).normalize(),
+    startT:points[1].clone().sub(points[0]).normalize(),endT:points[points.length-1].clone().sub(points[points.length-2]).normalize()};
+}
+function modelFromCompositeSamples(segments,wd){
+  const arcs=[],pathPts=[];segments.forEach(seg=>{const p=seg.points;if(p.length<2)return;
+    if(!pathPts.length)pathPts.push(p[0].clone());
+    else if(pathPts[pathPts.length-1].distanceTo(p[0])>0.15){if(pathPts[pathPts.length-1].distanceTo(p[p.length-1])<.15)p.reverse();else pathPts.push(p[0].clone());}
+    p.slice(1).forEach(v=>pathPts.push(v.clone()));
+    const arc=fitCurveArc(p);if(arc)arcs.push(arc);
+  });
+  if(pathPts.length<3||arcs.length<1)return null;
+  // Oś gięta: odcinki pomiędzy kolejnymi łukami, z rzeczywistymi promieniami
+  // dopasowanymi do próbek krzywych STEP. Próbki pozostają też do dokładnego podglądu.
+  const St=[],R=arcs.map(a=>a.radius),cs=arcs.map(a=>a.cs),th=arcs.map(a=>a.angle),d=[];
+  for(let i=0;i<=arcs.length;i++){
+    const a=i===0?pathPts[0]:arcs[i-1].end,b=i===arcs.length?pathPts[pathPts.length-1]:arcs[i].start;
+    let dir=b.clone().sub(a);if(dir.length()<1e-5){
+      if(i===0)dir=arcs[0].startT?arcs[0].startT.clone():arcs[0].end.clone().sub(arcs[0].start);
+      else dir=arcs[i-1].endT?arcs[i-1].endT.clone():arcs[i-1].end.clone().sub(arcs[i-1].start);
+    }
+    dir.normalize();St.push({a:a.clone(),b:b.clone(),dir:dir.clone()});d.push(dir);
+  }
+  const roll=[0],normals=arcs.map((a,i)=>new THREE.Vector3().crossVectors(d[i],cs[i]).normalize());
+  for(let i=1;i<arcs.length;i++){const ce=new THREE.Vector3().crossVectors(normals[i-1],d[i]).normalize();roll.push(Math.atan2(new THREE.Vector3().crossVectors(ce,cs[i]).dot(d[i]),ce.dot(cs[i]))/D);}
+  const lengths=St.map(x=>x.a.distanceTo(x.b));
+  return {L:lengths.slice(0,-1),tail:lengths[lengths.length-1],th,R,roll,wd,St,cs,d,manualGeo:true,displayPts:pathPts,wdFromModel:false};
+}
+function parseSTEPComposite(t){
+  const E={};t.replace(/\r/g,"").replace(/#(\d+)\s*=\s*([\s\S]*?);/g,(m,i,b)=>{E[+i]=b.replace(/\s+/g," ");});
+  const cache=[],candidates=[];
+  for(const k in E){if(!E[k].startsWith("COMPOSITE_CURVE("))continue;
+    const f=stepFields(E[k].slice(E[k].indexOf("("))),ids=stepRefs(f[1]||"");if(ids.length<4||ids.length>100)continue;
+    const segs=[];for(const sid of ids){const sf=stepFields((E[sid]||"").slice((E[sid]||"").indexOf("("))),cid=stepRefs(sf[2]||"")[0];if(!cid)continue;
+      let pts=stepCurveSamples(E,cid,new Map());if(pts.length<2)continue;if(sf[1]===".F.")pts.reverse();segs.push({points:pts});}
+    if(segs.length>=4){const m=modelFromCompositeSamples(segs,parseFloat(String(document.getElementById("wd").value).replace(",","."))||3);if(m)candidates.push({m,score:segs.length*1000+m.displayPts.length});}
+  }
+  candidates.sort((a,b)=>b.score-a.score);return candidates.length?candidates[0].m:null;
+}
+function parseSTEP(t){try{const composite=parseSTEPComposite(t);if(composite)return composite;return parseSTEP0(t);}catch(e){try{return parseSTEP0(t);}catch(e2){throw new Error(e2.message+" "+describeFile(t,"step"));}}}
+
+function parseSTEPFaceCurves(E,wd){
+  const refs=s=>(s.match(/#\d+/g)||[]).map(x=>+x.slice(1));
+  const point=i=>{const e=E[i]||"",m=e.match(/\(([-\d.E+]+),([-+\d.E+]+),([-+\d.E+]+)\)\)$/);return m?V(+m[1],+m[2],+m[3]):null;};
+  const seenSeg=new Set(),segs=[];
+  const key=p=>[p.x,p.y,p.z].map(x=>Math.round(x*100)/100).join(",");
+  const add=(a,b,R)=>{
+    if(!a||!b||a.distanceTo(b)<.05)return;
+    const ka=key(a),kb=key(b),k=(ka<kb?ka+"|"+kb:kb+"|"+ka)+"|"+(R===undefined?"L":R.toFixed(2));
+    if(seenSeg.has(k))return;seenSeg.add(k);segs.push({a:a.clone(),b:b.clone(),...(R===undefined?{}:{R})});
+  };
+  for(const id in E){
+    const face=E[id];if(!face.startsWith("ADVANCED_FACE"))continue;
+    const fr=refs(face),sf=fr[fr.length-1],surface=E[sf]||"",torus=surface.startsWith("TOROIDAL_SURFACE"),cyl=surface.startsWith("CYLINDRICAL_SURFACE");
+    if(!torus&&!cyl)continue;
+    const circleIds=new Set(),visited=new Set();
+    const walk=(n,depth)=>{if(visited.has(n)||depth>10)return;visited.add(n);const e=E[n]||"";
+      if(e.startsWith("CIRCLE"))circleIds.add(n);
+      refs(e).forEach(q=>walk(q,depth+1));};
+    fr.slice(0,-1).forEach(q=>walk(q,0));
+    const centers=[];
+    circleIds.forEach(cid=>{const ax=refs(E[cid])[0],pl=E[ax]||"",origin=refs(pl)[0],p=point(origin);if(p&&!centers.some(q=>q.distanceTo(p)<.03))centers.push(p);});
+    if(cyl&&centers.length>=2){
+      let best=null,bd=0;for(let i=0;i<centers.length;i++)for(let j=i+1;j<centers.length;j++){const d=centers[i].distanceTo(centers[j]);if(d>bd){bd=d;best=[centers[i],centers[j]];}}
+      if(best)add(best[0],best[1]);
+      const f=stepFields(surface.slice(surface.indexOf("("))),radius=+f[2];if(radius>0)wd=wd||2*radius;
+    }else if(torus&&centers.length>=2){
+      const f=stepFields(surface.slice(surface.indexOf("("))),place=refs(f[1]||"")[0],origin=point(refs(E[place]||"")[0]),major=+f[2],minor=+f[3];
+      if(origin&&major>0){
+        const onRing=centers.filter(q=>Math.abs(q.distanceTo(origin)-major)<Math.max(.12,major*.04));
+        if(onRing.length>=2){let pair=null,bd=0;for(let i=0;i<onRing.length;i++)for(let j=i+1;j<onRing.length;j++){const d=onRing[i].distanceTo(onRing[j]);if(d>bd){bd=d;pair=[onRing[i],onRing[j]];}}
+          if(pair)add(pair[0],pair[1],major);}
+      }
+      if(minor>0)wd=wd||2*minor;
+    }
+  }
+  if(segs.length<3)throw new Error("Nie udało się odtworzyć osi z powierzchni walcowych/toroidalnych");
+  // W pliku mogą być osobne druty/części. Budujemy składowe i wybieramy
+  // najdłuższy ciąg, zamiast odrzucać cały plik z powodu dodatkowej części.
+  const ends=new Map();segs.forEach((g,i)=>{for(const p of [g.a,g.b]){const k=key(p);if(!ends.has(k))ends.set(k,[]);ends.get(k).push(i);}});
+  const used=new Set(),models=[];
+  for(let i=0;i<segs.length;i++){if(used.has(i))continue;const stack=[i],component=[];used.add(i);
+    while(stack.length){const j=stack.pop();component.push(segs[j]);[segs[j].a,segs[j].b].forEach(p=>(ends.get(key(p))||[]).forEach(n=>{if(!used.has(n)){used.add(n);stack.push(n);}}));}
+    try{const m=buildChain(component,wd);const len=m.L.reduce((a,b)=>a+b,0)+m.tail+m.th.reduce((a,b,j)=>a+b*D*m.R[j],0);models.push({m,len});}catch(_){}
+  }
+  if(!models.length)throw new Error("Powierzchnie CAD nie tworzą jednego ciągłego przebiegu drutu");
+  models.sort((a,b)=>b.len-a.len);return models[0].m;
+}
+
+function stepSection(src,name){
+  const re=new RegExp(name+"\\s*\\("),m=re.exec(src);if(!m)return null;
+  const open=src.indexOf("(",m.index),start=open+1;let depth=1,q=false;
+  for(let i=start;i<src.length;i++){const c=src[i];if(c==="'")q=!q;else if(!q&&c==="(")depth++;else if(!q&&c===")"&&--depth===0)return src.slice(start,i);}
+  return null;
+}
+function stepMatrix(src,kind){
+  if(!src)return [];
+  return stepFields(src).map(row=>{
+    const body=row.trim().replace(/^\(/,"").replace(/\)$/,"");
+    if(kind==="refs")return stepRefs(body);
+    return stepFields(body).map(Number);
+  });
+}
+function stepExpandKnots(mult,vals){
+  const out=[];mult.forEach((n,i)=>{for(let j=0;j<n;j++)out.push(vals[i]);});return out;
+}
+function stepDeBoor(arr,degree,U,u){
+  const n=arr.length-1;if(n<degree||U.length!==n+degree+2)return null;
+  const lo=U[degree],hi=U[n+1];u=Math.max(lo,Math.min(hi,u));
+  let k=n;if(u<hi){k=degree;while(k<n&&u>=U[k+1])k++;}
+  const d=[];for(let j=0;j<=degree;j++)d[j]=arr[k-degree+j].slice();
+  for(let r=1;r<=degree;r++)for(let j=degree;j>=r;j--){
+    const a0=U[k-degree+j],a1=U[k+1+j-r],a=Math.abs(a1-a0)<1e-12?0:(u-a0)/(a1-a0);
+    d[j]=d[j-1].map((v,z)=>v*(1-a)+d[j][z]*a);
+  }
+  return d[degree];
+}
+function parseSTEPBS(E){
+  const curves=[],radii=[],cylinderRadii=[];
+  for(const id in E){
+    const ent=E[id]||"",base=stepSection(ent,"B_SPLINE_SURFACE");
+    if(!base)continue;
+    const bf=stepFields(base);if(bf.length<3)continue;
+    const pu=+bf[0],pv=+bf[1],gridRefs=stepMatrix(bf[2],"refs");
+    if(!Number.isFinite(pu)||!Number.isFinite(pv)||gridRefs.length<pu+1||gridRefs.some(r=>r.length!==gridRefs[0].length||r.length<pv+1))continue;
+    const pts=gridRefs.map(row=>row.map(k=>{
+      const e=E[k]||"",m=e.match(/\(([-+\d.E]+),([-+\d.E]+),([-+\d.E]+)\)\s*\)$/);
+      return m?[+m[1],+m[2],+m[3]]:null;
+    }));
+    if(pts.some(row=>row.some(p=>!p)))continue;
+    const ksec=stepSection(ent,"B_SPLINE_SURFACE_WITH_KNOTS");
+    if(!ksec)continue;
+    const kf=stepFields(ksec);if(kf.length<4)continue;
+    const ku=stepExpandKnots(stepFields(kf[0]).map(Number),stepFields(kf[2]).map(Number));
+    const kv=stepExpandKnots(stepFields(kf[1]).map(Number),stepFields(kf[3]).map(Number));
+    const wsec=stepSection(ent,"RATIONAL_B_SPLINE_SURFACE");
+    let weights=pts.map(row=>row.map(()=>1));
+    if(wsec){
+      const wm=stepMatrix(wsec,"nums");
+      if(wm.length===pts.length&&wm.every((r,i)=>r.length===pts[i].length))weights=wm;
+    }
+    const nu=pts.length,nv=pts[0].length;
+    if(ku.length!==nu+pu+1||kv.length!==nv+pv+1)continue;
+    const H=pts.map((row,i)=>row.map((p,j)=>[p[0]*weights[i][j],p[1]*weights[i][j],p[2]*weights[i][j],weights[i][j]]));
+    const u0=ku[pu],u1=ku[nu],v0=kv[pv],v1=kv[nv];
+    if(!(u1>u0&&v1>v0)||v1-v0<5.5)continue; // pełny obwód przekroju drutu
+    const evalSurf=(u,v)=>{
+      const col=[];for(let j=0;j<nv;j++){const a=stepDeBoor(H.map(row=>row[j]),pu,ku,u);if(!a)return null;col.push(a);}
+      const h=stepDeBoor(col,pv,kv,v);if(!h||Math.abs(h[3])<1e-12)return null;
+      return [h[0]/h[3],h[1]/h[3],h[2]/h[3]];
+    };
+    const samples=[],rad=[];
+    for(let i=0;i<=64;i++){
+      const u=u0+(u1-u0)*i/64,ring=[];
+      for(let j=0;j<64;j++){const p=evalSurf(u,v0+(v1-v0)*j/64);if(p)ring.push(p);}
+      if(ring.length<48)continue;
+      const c=[0,0,0];ring.forEach(p=>{c[0]+=p[0];c[1]+=p[1];c[2]+=p[2];});
+      c[0]/=ring.length;c[1]/=ring.length;c[2]/=ring.length;samples.push(V(c[0],c[1],c[2]));
+      ring.forEach(p=>rad.push(Math.hypot(p[0]-c[0],p[1]-c[1],p[2]-c[2])));
+    }
+    if(samples.length<5)continue;
+    const radius=rad.sort((a,b)=>a-b)[Math.floor(rad.length/2)];
+    if(radius>0.05&&Number.isFinite(radius))radii.push(radius);
+    curves.push({points:samples});
+  }
+  // Proste odcinki osi odtwarzamy z powierzchni walcowych (oś walca),
+  // a gięcia z pełnych powierzchni B-spline. Dzięki temu łączymy oba typy geometrii.
+  const key=p=>p.map(x=>Math.round(x*5)/5).join(",");
+  const point=id=>stepPoint(E,id),seenCyl=new Set();
+  for(const id in E){
+    const face=E[id]||"";if(!face.startsWith("ADVANCED_FACE"))continue;
+    const fr=stepRefs(face),sid=fr[fr.length-1],surface=E[sid]||"";
+    if(!surface.startsWith("CYLINDRICAL_SURFACE"))continue;
+    const circleIds=new Set(),visited=new Set();
+    const walk=(n,depth)=>{if(visited.has(n)||depth>10)return;visited.add(n);const e=E[n]||"";
+      if(e.startsWith("CIRCLE"))circleIds.add(n);stepRefs(e).forEach(q=>walk(q,depth+1));};
+    fr.slice(0,-1).forEach(q=>walk(q,0));
+    const centers=[];
+    circleIds.forEach(cid=>{const place=stepRefs(E[cid])[0],origin=stepRefs(E[place])[0],p=point(origin);
+      if(p&&!centers.some(q=>q.distanceTo(p)<.03))centers.push(p);});
+    if(centers.length>=2){
+      let pair=null,dist=0;for(let i=0;i<centers.length;i++)for(let j=i+1;j<centers.length;j++){
+        const d=centers[i].distanceTo(centers[j]);if(d>dist){dist=d;pair=[centers[i],centers[j]];}
+      }
+      if(pair){const k=[key(pair[0].toArray()),key(pair[1].toArray())].sort().join("|");
+        if(!seenCyl.has(k)){seenCyl.add(k);curves.push({points:pair});}}
+    }
+    const sf=stepFields(surface.slice(surface.indexOf("("))),rr=+sf[2];
+    if(rr>0&&Number.isFinite(rr))cylinderRadii.push(rr);
+  }
+  if(curves.length<2)return parseSTEPBSLegacy(E);
+  // Usuń powtórzone powierzchnie opisujące tę samą część drutu.
+  const unique=new Map();
+  curves.forEach(s=>{
+    let a=key(s.points[0].toArray()),b=key(s.points[s.points.length-1].toArray());
+    const k=a<b?a+"|"+b:b+"|"+a;
+    if(!unique.has(k))unique.set(k,s);
+  });
+  const segs=[...unique.values()],adj=new Map();
+  segs.forEach((s,i)=>[key(s.points[0].toArray()),key(s.points[s.points.length-1].toArray())].forEach(k=>{
+    if(!adj.has(k))adj.set(k,[]);adj.get(k).push(i);
+  }));
+  const used=new Set(),models=[];
+  for(let seed=0;seed<segs.length;seed++){
+    if(used.has(seed))continue;
+    const comp=[],stack=[seed];used.add(seed);
+    while(stack.length){const i=stack.pop();comp.push(i);const s=segs[i];
+      [s.points[0],s.points[s.points.length-1]].forEach(p=>(adj.get(key(p.toArray()))||[]).forEach(j=>{if(!used.has(j)){used.add(j);stack.push(j);}}));
+    }
+    const ends=new Map();comp.forEach(i=>{const s=segs[i];[s.points[0],s.points[s.points.length-1]].forEach(p=>{
+      const k=key(p.toArray());if(!ends.has(k))ends.set(k,[]);ends.get(k).push(i);
+    });});
+    const start=[...ends.entries()].find(([,a])=>a.length===1)?.[0]||key(segs[comp[0]].points[0].toArray());
+    const path=[],local=new Set();let at=start;
+    while(true){
+      const next=(ends.get(at)||[]).find(i=>!local.has(i));if(next===undefined)break;
+      local.add(next);const s=segs[next],a=key(s.points[0].toArray()),forward=a===at;
+      path.push({points:forward?s.points.slice():s.points.slice().reverse()});
+      at=key((forward?s.points[s.points.length-1]:s.points[0]).toArray());
+    }
+    if(path.length){
+      const m=modelFromCompositeSamples(path,0);
+      if(m){const len=m.L.reduce((a,b)=>a+b,0)+m.tail+m.th.reduce((a,b,i)=>a+b*D*m.R[i],0);models.push({m,len});}
+    }
+  }
+  if(!models.length)return parseSTEPBSLegacy(E);
+  models.sort((a,b)=>b.len-a.len);
+  const useR=cylinderRadii.length?cylinderRadii:radii;
+  const wd=useR.length?2*useR.sort((a,b)=>a-b)[Math.floor(useR.length/2)]:0;
+  models.forEach(x=>{if(wd>0){x.m.wd=wd;x.m.wdFromModel=true;}});
+  WIRES=models.map(x=>x.m);
+  if(WIRES.length>1)globalThis.wireInfo=WIRES.map((m,i)=>"Drut "+(i+1)+": "+m.th.length+" gięć").join(", ");
+  return WIRES[0];
+}
+
+function parseSTEP0(t){
+  const E={};t.replace(/\r/g,"").replace(/#(\d+)\s*=\s*([\s\S]*?);/g,(m,i,b)=>{E[+i]=b.replace(/\s+/g,"")});
+  const refs=s=>(s.match(/#\d+/g)||[]).map(x=>+x.slice(1)),nums=s=>(s.match(/-?\d+\.?\d*(?:E[-+]?\d+)?/gi)||[]).map(Number);
+  const pt=i=>{const a=nums(E[i].split("('',")[1]);return V(a[0],a[1],a[2]);},ctr=i=>pt(refs(E[refs(E[i])[0]])[0]);
+  const segs=[];let wd=0;
+  for(const k in E){if(!E[k].startsWith("ADVANCED_FACE"))continue;const r=refs(E[k]),sf=r[r.length-1],ty=E[sf].split("(")[0];
+    if(ty!="CYLINDRICAL_SURFACE"&&ty!="TOROIDAL_SURFACE")continue;
+    const c=[];r.slice(0,-1).forEach(b=>{try{const lp=refs(E[b])[0],oe=refs(E[lp])[0],ec=refs(E[oe])[0],cu=refs(E[ec])[2];if(E[cu].startsWith("CIRCLE"))c.push(ctr(cu));}catch(e){}});
+    if(c.length<2)continue;const o={a:c[0],b:c[1]};
+    if(ty=="TOROIDAL_SURFACE"){const q=nums(E[sf].slice(E[sf].indexOf("#")).split(",").slice(1).join(","));o.R=q[0];wd=2*q[1];}
+    segs.push(o);}
+  if(segs.length<3||!segs.some(s=>s.R!==undefined)){try{return parseSTEPFaceCurves(E,wd);}catch(faceErr){const w=parseSTEPBS(E);WIRES=w;if(w.length>1)globalThis.wireInfo=w.map((m,i)=>"Drut "+(i+1)+": "+m.th.length+" gięć").join(", ");return w[0];}}
+  WIRES=[];return buildChain(segs,wd);
+}
+function parseIGES(t){try{return parseIGES0(t);}catch(e){throw new Error(e.message+" "+describeFile(t,"iges"));}}
+function parseIGES0(t){
+  const Ls=t.split(/\r?\n/),Dl=[],P={};
+  Ls.forEach(l=>{const s=l[72];if(s=="D")Dl.push(l);else if(s=="P"){const k=+l.slice(64,72);P[k]=(P[k]||"")+l.slice(0,64);}});
+  const ent=[];for(let i=0;i+1<Dl.length;i+=2)ent.push({n:+Dl[i].slice(0,8),xf:+Dl[i].slice(48,56),de:i+1});
+  const par=e=>(P[e.de]||"").replace(/\s/g,"").replace(/;.*$/,"").split(",").slice(1).map(Number),by={};ent.forEach(e=>by[e.de]=e);
+  const ap=(m,x)=>m?V(m[0]*x.x+m[1]*x.y+m[2]*x.z+m[3],m[4]*x.x+m[5]*x.y+m[6]*x.z+m[7],m[8]*x.x+m[9]*x.y+m[10]*x.z+m[11]):x;
+  const segs=[];
+  ent.forEach(e=>{const p=par(e),m=e.xf&&by[e.xf]?par(by[e.xf]):null;
+    if(e.n==110)segs.push({a:ap(m,V(p[0],p[1],p[2])),b:ap(m,V(p[3],p[4],p[5]))});
+    else if(e.n==100){const z=p[0],c=V(p[1],p[2],z),a=V(p[3],p[4],z),b=V(p[5],p[6],z);segs.push({a:ap(m,a),b:ap(m,b),R:Math.hypot(a.x-c.x,a.y-c.y)});}});
+  if(segs.length<3)return parseIGESSurfaceCurves(ent,par,by,ap);
+  return buildChain(segs,0);
+}
+function parseIGESSurfaceCurves(ent,par,by,ap){
+  const curves=[],radii=[];
+  for(const e of ent){
+    if(e.n!==128)continue;
+    const p=par(e),K1=p[0],K2=p[1],M1=p[2],M2=p[3],nu=K1+1,nv=K2+1;
+    const kuN=K1+M1+2,kvN=K2+M2+2,off=9;
+    if(!Number.isInteger(K1)||!Number.isInteger(K2)||nu<2||nv<2||p.length<off+kuN+kvN+nu*nv*4+4)continue;
+    const ku=p.slice(off,off+kuN),kv=p.slice(off+kuN,off+kuN+kvN);
+    let q=off+kuN+kvN;
+    const w=p.slice(q,q+nu*nv);q+=nu*nv;
+    const coords=p.slice(q,q+nu*nv*3);
+    const mat=e.xf&&by[e.xf]?par(by[e.xf]):null,grid=[];
+    for(let i=0;i<nu;i++){const row=[];for(let j=0;j<nv;j++){
+      const z=j*nu+i,pt=ap(mat,V(coords[z*3],coords[z*3+1],coords[z*3+2])),ww=w[z]||1;
+      row.push([pt.x*ww,pt.y*ww,pt.z*ww,ww]);
+    }grid.push(row);}
+    const u0=ku[M1],u1=ku[nu],v0=kv[M2],v1=kv[nv];
+    if(!(u1>u0&&v1>v0)||v1-v0<5.5)continue;
+    const evalSurf=(u,v)=>{
+      const col=[];for(let j=0;j<nv;j++){const a=stepDeBoor(grid.map(row=>row[j]),M1,ku,u);if(!a)return null;col.push(a);}
+      const h=stepDeBoor(col,M2,kv,v);if(!h||Math.abs(h[3])<1e-12)return null;
+      return [h[0]/h[3],h[1]/h[3],h[2]/h[3]];
+    };
+    const samples=[],rad=[];
+    for(let i=0;i<=64;i++){
+      const u=u0+(u1-u0)*i/64,ring=[];
+      for(let j=0;j<64;j++){const pt=evalSurf(u,v0+(v1-v0)*j/64);if(pt)ring.push(pt);}
+      if(ring.length<48)continue;
+      const c=[0,0,0];ring.forEach(pt=>{c[0]+=pt[0];c[1]+=pt[1];c[2]+=pt[2];});
+      c[0]/=ring.length;c[1]/=ring.length;c[2]/=ring.length;
+      samples.push(V(c[0],c[1],c[2]));
+      ring.forEach(pt=>rad.push(Math.hypot(pt[0]-c[0],pt[1]-c[1],pt[2]-c[2])));
+    }
+    if(samples.length>=5){curves.push({points:samples});if(rad.length)radii.push(rad.sort((a,b)=>a-b)[Math.floor(rad.length/2)]);}
+  }
+  if(curves.length<2)throw new Error("IGES: nie udało się odtworzyć osi z powierzchni B-spline (128).");
+  const key=p=>p.map(x=>Math.round(x*5)/5).join(","),unique=new Map();
+  curves.forEach(s=>{const a=key(s.points[0].toArray()),b=key(s.points[s.points.length-1].toArray()),k=a<b?a+"|"+b:b+"|"+a;if(!unique.has(k))unique.set(k,s);});
+  const segs=[...unique.values()],adj=new Map();
+  segs.forEach((s,i)=>[key(s.points[0].toArray()),key(s.points[s.points.length-1].toArray())].forEach(k=>{if(!adj.has(k))adj.set(k,[]);adj.get(k).push(i);}));
+  const used=new Set(),models=[];
+  for(let seed=0;seed<segs.length;seed++){if(used.has(seed))continue;
+    const comp=[],stack=[seed];used.add(seed);
+    while(stack.length){const i=stack.pop(),s=segs[i];comp.push(i);
+      [s.points[0],s.points[s.points.length-1]].forEach(pt=>(adj.get(key(pt.toArray()))||[]).forEach(j=>{if(!used.has(j)){used.add(j);stack.push(j);}}));
+    }
+    const ends=new Map();comp.forEach(i=>{const s=segs[i];[s.points[0],s.points[s.points.length-1]].forEach(pt=>{const k=key(pt.toArray());if(!ends.has(k))ends.set(k,[]);ends.get(k).push(i);});});
+    const start=[...ends.entries()].find(([,a])=>a.length===1)?.[0]||key(segs[comp[0]].points[0].toArray());
+    const path=[],local=new Set();let at=start;
+    while(true){const next=(ends.get(at)||[]).find(i=>!local.has(i));if(next===undefined)break;
+      local.add(next);const s=segs[next],forward=key(s.points[0].toArray())===at;
+      path.push({points:forward?s.points.slice():s.points.slice().reverse()});
+      at=key((forward?s.points[s.points.length-1]:s.points[0]).toArray());
+    }
+    if(path.length){const m=modelFromCompositeSamples(path,0);if(m){
+      const len=m.L.reduce((a,b)=>a+b,0)+m.tail+m.th.reduce((a,b,i)=>a+b*D*m.R[i],0);models.push({m,len});
+    }}
+  }
+  if(!models.length)throw new Error("IGES: powierzchnie B-spline nie tworzą ciągłego przebiegu drutu.");
+  models.sort((a,b)=>b.len-a.len);
+  const wd=radii.length?2*radii.sort((a,b)=>a-b)[Math.floor(radii.length/2)]:0;
+  WIRES=models.map(x=>x.m);WIRES.forEach(m=>{if(wd>0){m.wd=wd;m.wdFromModel=true;}});
+  if(WIRES.length>1)globalThis.wireInfo=WIRES.map((m,i)=>"Drut "+(i+1)+": "+m.th.length+" gięć").join(", ");
+  return WIRES[0];
+}
+function corners(m){const n=m.R.length,c=[m.St[0].a.clone()];
+  for(let i=0;i<n;i++){const a=m.St[i].a,d1=m.d[i],b=m.St[i+1].a,d2=m.d[i+1],w=a.clone().sub(b),A=d1.dot(d1),B=d1.dot(d2),C=d2.dot(d2),den=A*C-B*B,s=den<1e-9?0:(B*d2.dot(w)-C*d1.dot(w))/den,t=den<1e-9?0:(A*d2.dot(w)-B*d1.dot(w))/den;
+    c.push(a.clone().addScaledVector(d1,s).add(b.clone().addScaledVector(d2,t)).multiplyScalar(.5));}
+  c.push(m.St[n].b.clone());return c;}
+function modelPts(m){if(!m.manualGeo&&m.displayPts&&m.displayPts.length>1)return m.displayPts.map(p=>p.clone());const pts=[],n=m.R.length;
+  for(let i=0;i<=n;i++){pts.push(m.St[i].a.clone());pts.push(m.St[i].b.clone());
+    if(i<n){const th=m.th[i]*D,c=m.St[i].b.clone().addScaledVector(m.cs[i],m.R[i]),k=Math.max(24,Math.ceil(Math.abs(m.th[i])*2));
+      for(let j=1;j<k;j++){const a=th*j/k;pts.push(c.clone().addScaledVector(m.cs[i],-m.R[i]*Math.cos(a)).addScaledVector(m.d[i],m.R[i]*Math.sin(a)));}}}
+  return pts;}
+function readCfg(){
+  const g=(id,i,d)=>{const v=parseFloat(id[i]);return isNaN(v)?d:v;};
+  const pins=rdT("tp").map(r=>({id:r[0]||"D",x:+r[1],y:+r[2],d:g(r,3,5),h:g(r,4,5.5),g:g(r,5,0),st:g(r,7,1)}));
+  const bolts=rdT("bp").map(r=>({id:r[0]||"S",r:+r[1],d:g(r,2,10),h:g(r,3,8),ang:g(r,4,0),g:g(r,5,0)}));
+  return {type:document.getElementById("tt").value,pins,bolts,hd:g([document.getElementById("hd").value],0,45),hh:g([document.getElementById("hh").value],0,35),hw:g([document.getElementById("hw").value],0,65)};
+}
+function mkT(id,cols,rows){const t=document.getElementById(id);t.row=r=>"<tr>"+cols.map((c,i)=>`<td><input value="${r[i]??""}"></td>`).join("")+"</tr>";t.innerHTML="<tr>"+cols.map(c=>"<th>"+c+"</th>").join("")+"</tr>"+rows.map(t.row).join("");}
+function addR(id,n){const t=document.getElementById(id);t.insertAdjacentHTML("beforeend",t.row(Array(n).fill("")));}
+function rdT(id){return [...document.getElementById(id).querySelectorAll("tr")].slice(1).map(tr=>[...tr.querySelectorAll("input")].map(i=>i.value.trim())).filter(r=>r[1]!==""&&!isNaN(+r[1]));}
+let CFG=null;
+const DH=()=>Math.max(5.5,...CFG.pins.map(p=>p.h))+1.2,DB=()=>Math.max(8,...CFG.bolts.map(b=>b.h))+1.2;
+function assignTools(){
+  if(!CFG)CFG=readCfg();const wr=(ID.wd||3)/2;let prevO=1;
+  bends.forEach(b=>{
+    const ri=b.r-wr;let best=null;
+    if(CFG.type=="3"){let k=0,bd=1e9;CFG.pins.forEach((p,i)=>{const dd=Math.hypot(p.x,p.y);if(dd<bd){bd=dd;k=i;}});const p=CFG.pins[k];
+      if(!p){b.tool="brak trzpienia";b.phi=0;b.Ox=0;b.Oy=0;b.pk=0;return;}
+      const m=[p.y,-p.x];b.pk=k;b.pr=p.d/2-p.g;b.dist=b.pr+wr;b.phi=0;b.Ox=-m[0];b.Oy=b.sd*b.dist-m[1];
+      const bad=[];if(Math.abs(b.pr-ri)>0.6)bad.push("r wewn. "+fmt(ri)+" wym. "+fmt(b.pr));
+      b.tool=p.id+" Ø"+fmt(p.d)+" (centralny)"+(bad.length?" ✗ "+bad.join(", "):"");return;}
+    CFG.pins.forEach((p,i)=>{[1,-1].forEach(o=>{const wy=o*p.y,mn=Math.min(...CFG.pins.map(q=>o*q.x));if(wy*b.sd<=0||o*p.x>mn+.5)return;
+      const sc2=Math.abs(p.d/2-p.g-ri)*10+Math.abs(Math.abs(wy)-b.r)+(o!=prevO?.5:0);
+      if(!best||sc2<best.sc)best={sc:sc2,i,o,wx:o*p.x,wy};});});
+    if(!best){b.tool="brak trzpienia po tej stronie";b.phi=Math.PI/2;b.Ox=0;b.Oy=0;b.pk=0;return;}
+    const p=CFG.pins[best.i];b.pk=best.i;b.pr=p.d/2-p.g;b.phi=best.o*Math.PI/2;b.Ox=-best.wx;b.dist=b.pr+wr;b.Oy=b.sd*b.dist-best.wy;prevO=best.o;
+    const bad=[];if(Math.abs(b.pr-ri)>0.6)bad.push("r wewn. "+fmt(ri)+" wym. "+fmt(b.pr));
+    b.tool=p.id+" Ø"+fmt(p.d)+(bad.length?" ✗ "+bad.join(", "):"");
+  });
+  bends.forEach(b=>{ROWS[b.row].tool=b.tool;const bo=CFG.bolts[0];b.amax=b.full||Math.abs(b.v);b.d0=undefined;if(!bo||b.dist===undefined)return;
+    const th=b.full||Math.abs(b.v),Lr=ROWS[b.row].L;
+    for(let a=0;a<=th+1e-6;a+=3){if(boltXY(b,a*D,b.Ox,b.Oy)[2]>Lr-.5){b.amax=Math.max(0,a-3);break;}}
+    const q=boltXY(b,0,b.Ox,b.Oy);b.t0c=q[2];b.d0=Math.hypot(q[0],q[1]-b.sd*b.dist);
+    let gm=1e9;for(let a=0;a<=th+1e-6;a+=3){const q2=boltXY(b,a*D,b.Ox,b.Oy);gm=Math.min(gm,Math.hypot(q2[0],q2[1]-b.sd*b.dist)-bo.d/2-CFG.pins[b.pk].d/2);}b.gmin=gm;});
+  S.filter(s=>s.part==2).forEach(s=>{const m=s.main;Object.assign(s,{phi:m.phi,headPhi:m.phi+Math.PI,Ox:m.Ox,Oy:m.Oy,pk:m.pk,dist:m.dist,pr:m.pr,tool:m.tool});});
+
+  // Odtwórz sekwencję z surowych kroków. Obrót H musi być liczony dopiero teraz,
+  // bo dopiero assignTools() wyznacza phi oraz pozycję kolejnych ustawień głowicy.
+  S=S.filter(s=>s.k!=="H");
+  const seq=[];let prev=null;
+  for(const st of S){
+    if(st.k==="B"&&st.part!==2&&prev){
+      const d=((st.phi-prev.phi+Math.PI*3)%(Math.PI*2))-Math.PI;
+      if(Number.isFinite(d)&&Math.abs(d)>1e-4)
+        seq.push({k:"H",row:st.row,target:st,from:prev,delta:d});
+    }
+    seq.push(st);
+    if(st.k==="B"&&st.part!==2)prev=st;
+    if(st.k==="B"&&st.part===2)
+      prev=Object.assign({},st,{phi:st.headPhi});
+  }
+  S=seq;
+  T=0;S.forEach(s=>{s.t0=T;T+=dur(s)});TOT=T+2.5;
+}
+function boltXY(b,al,Ox,Oy){
+  const bo=CFG.bolts[0];if(!bo)return [Ox,Oy];const wr=(ID.wd||3)/2,off=wr+bo.d/2,beta=-b.sd*al,c=Math.cos(beta),s=Math.sin(beta),Cy=b.sd*b.r;
+  const rot=(x,y)=>[c*x-s*y,s*x+c*y],q=rot(0,-Cy),Q=[q[0],Cy+q[1]],u=rot(-1,0),n=rot(0,-b.sd);
+  const X0=[Q[0]+n[0]*off,Q[1]+n[1]*off],dx=X0[0]-Ox,dy=X0[1]-Oy,B=dx*u[0]+dy*u[1],disc=B*B-(dx*dx+dy*dy-bo.r*bo.r),t=disc>=0?-B+Math.sqrt(disc):-B;
+  return [X0[0]+u[0]*t,X0[1]+u[1]*t,t];
+}
+function headPose(tm){
+  const DHh=DH(),DBb=DB(),bo=CFG.bolts[0],wa=x=>Math.atan2(Math.sin(x),Math.cos(x));
+  const ang=(b,al)=>{const q=boltXY(b,al,b.Ox,b.Oy);return Math.atan2(q[1]-b.Oy,-(q[0]-b.Ox));};
+  const mk=(b,al)=>{const q=boltXY(b,al,b.Ox,b.Oy);return {phi:b.headPhi===undefined?b.phi:b.headPhi,Ox:b.Ox,Oy:b.Oy,dz:0,bx:q[0],by:q[1],bz:-DBb,ba:ang(b,al),ah:ang(b,0)};};
+  let st=mk(bends[0],0),end=null,bi=-1;
+  for(const s of S){const f=cl((tm-s.t0)/dur(s));if(f<=0)break;
+    if(s.k=="B"){const m=s.main||s,a0=(s.a0||0)*D,al=Math.abs(s.v)*D;if(s.part!=2)bi++;
+      const e=Math.min(ss(cl(f/.1)),ss(cl((1-f)/.12))),q=boltXY(m,a0+al*f,m.Ox,m.Oy);let bx=q[0],by=q[1];
+      if(s.part==2&&end){const g=ss(cl(f/.25));bx=end.bx+(bx-end.bx)*g;by=end.by+(by-end.by)*g;}
+      st={phi:(s.headPhi===undefined?m.phi:s.headPhi),Ox:m.Ox,Oy:m.Oy,dz:0,bx,by,bz:-DBb*(1-e),slip:q[2]>ROWS[s.row].L-.5};end=mk(s.part===2?s:m,a0+al);}
+    else if(s.k==="F"||s.k==="R"||s.k==="FR")st=end||st;
+    else if(s.k==="K"){const pe=end||st;
+      if(s.headTurn){const e=ss(f);st=Object.assign({},pe,{phi:pe.phi+s.headTurn*D*e});if(f>=1)end=st;}
+    }
+    else if(s.k==="C")st=end||st;
+    else if(s.k==="H"){const nb=s.target,pe=end||st,ns=mk(nb,0),e=ss(cl((f-.15)/.7)),dz=-DHh*Math.min(ss(cl(f/.25)),ss(cl((1-f)/.25))),g=ss(f);
+      st={phi:pe.phi+s.delta*e,Ox:pe.Ox+(nb.Ox-pe.Ox)*e,Oy:pe.Oy+(nb.Oy-pe.Oy)*e,dz,bx:pe.bx+(ns.bx-pe.bx)*g,by:pe.by+(ns.by-pe.by)*g,bz:-DBb};if(f>=1)end=st;
+    }
+    if(f<1)break;}
+  return st;
+}
+const headG=new THREE.Group(),houseG=new THREE.Group(),bolts=[];sc.add(headG);sc.add(houseG);
+const dimG=new THREE.Group(),dimLines=[];sc.add(dimG);dimG.visible=false;
+function drawHead(){
+  [headG,houseG].forEach(g=>{while(g.children.length)g.remove(g.children[0]);});bolts.length=0;
+  const wr=((ID&&ID.wd)||3)/2,zt=-wr,zh=zt-CFG.hh,add2=(g,geo,m,x,y,z)=>add(geo,m,x,y,z,g);
+  add2(houseG,new THREE.BoxGeometry(CFG.hw,CFG.hw,26),M(0x7d8794,.6,.45),0,0,zh-13);
+  add2(houseG,new THREE.BoxGeometry(260,200,4),M(0x2c333d,.5,.6),20,0,zh-28);
+  add2(headG,cz(CFG.hd/2,CFG.hh,64),M(0xc3cad4,.8,.3),0,0,(zh+zt)/2);
+
+  CFG.pins.forEach(p=>{const col=["D3","D4"].includes(p.id)?0x3498db:0xf1c40f;add2(headG,cz(p.d/2,p.h,32),M(col,.6,.3),p.y,-p.x,zt+p.h/2);});
+  CFG.bolts.forEach(b=>{const m=add2(houseG,cz(b.d/2,b.h,32),M(0xe74c3c,.6,.3),0,0,zt+b.h/2);m.userData={R:b.r,ang:b.ang*D,z:zt+b.h/2};bolts.push(m);});
+  headG.position.set(0,0,0);headG.rotation.z=0;
+  while(dimG.children.length)dimG.remove(dimG.children[0]);dimLines.length=0;
+  updLegend();
+}
+function applyModel(m){
+  const wdi=document.getElementById("wd");
+  if(m.wdFromModel&&m.wd>0){wdi.value=+m.wd.toFixed(2);wdi.readOnly=true;}else{wdi.readOnly=false;if(!(m.wd>0))m.wd=parseFloat(String(wdi.value).replace(",","."))||3;}
+  ID=m;const n=m.th.length;
+  recalcDefaultGeometry();CFG=readCfg();bestVariant();HAS=true;drawHead();
+  wire.scale.set(1,m.wd/3,m.wd/3);table();tm=0;
+  const cr=corners(m);document.getElementById("co").value=cr.map((v,i)=>[v.x,v.y,v.z].map(x=>x.toFixed(3)).join(" ")+(i>0&&i<=n?" "+(+m.R[i-1].toFixed(3)):"")).join("\n");
+  document.getElementById("modelCoords").value=document.getElementById("co").value;
+  document.querySelector(".sub").textContent="Drut Ø"+fmt(m.wd)+" mm, "+n+" gięć. Przeciągnij, aby obrócić widok, kółko myszy lub +/− przybliża.";
+  document.getElementById("msg").textContent="Wczytano: "+n+" gięć, drut Ø"+fmt(m.wd)+" mm ("+(m.wdFromModel?"z modelu":"wybrany ręcznie")+"), długość rozwinięta ≈ "+fmt(m.L.reduce((a,b)=>a+b,0)+m.tail+m.th.reduce((a,t,i)=>a+t*D*m.R[i],0))+" mm. Współrzędne wierzchołków (X Y Z R) są w polu powyżej.";
+  buildModelView();
+  const sel=document.getElementById("wsel");
+  if(WIRES.length>1){const ix=WIRES.indexOf(m);sel.style.display="";sel.innerHTML=WIRES.map((w,i)=>"<option value="+i+">Drut "+(i+1)+" ("+w.th.length+" gięć)</option>").join("");sel.value=String(ix<0?0:ix);document.getElementById("msg").textContent+=" Plik zawiera "+WIRES.length+" druty, wybierz właściwy z listy.";}else sel.style.display="none";
+}
+function msg(e){document.getElementById("msg").textContent="Błąd: "+e.message;}
+// widok całego modelu
+const modelG=new THREE.Group();sc.add(modelG);modelG.visible=false;let saved=null;
+const modelHitTargets=[];
+let modelSelection=null;
+function buildModelView(){
+  modelSelection=null;
+  while(modelG.children.length)modelG.remove(modelG.children[0]);
+  modelHitTargets.length=0;modelSelection=null;
+  const pts=modelPts(ID),bb=new THREE.Box3().setFromPoints(pts),c=bb.getCenter(V(0,0,0)),sz=bb.getSize(V(0,0,0)).length(),wr=ID.wd/2;
+  // Widoczny drut pozostaje jednym ciągłym elementem.
+  const q=pts.map(v=>v.clone().sub(c));
+  if(q.length>1){
+    const curve=(()=>{const path=new THREE.CurvePath();for(let i=1;i<q.length;i++)path.add(new THREE.LineCurve3(q[i-1],q[i]));return path;})();
+    const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,Math.max(64,q.length*5),wr,16,false),M(0xc98a6a,.75,.3));
+    mesh.userData={kind:"whole"};mesh.castShadow=true;modelG.add(mesh);
+  }
+  // Niewidoczne obiekty wyboru odtwarzają podział na proste i łuki.
+  // Dzięki temu kliknięcie wskazuje konkretny fragment, a nie cały drut.
+  const hitMat=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:0,depthWrite:false,colorWrite:false,side:THREE.DoubleSide});
+  const addHit=(points,data)=>{
+    if(points.length<2)return;
+    const curve=(()=>{const path=new THREE.CurvePath();for(let i=1;i<points.length;i++)path.add(new THREE.LineCurve3(points[i-1],points[i]));return path;})();
+    const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,Math.max(12,points.length*4),Math.max(wr*1.8,1.5),10,false),hitMat);
+    mesh.userData=data;modelG.add(mesh);modelHitTargets.push(mesh);
+  };
+  const n=ID.R.length;
+  for(let i=0;i<=n;i++){
+    const st=ID.St[i],p0=st.a.clone().sub(c),p1=st.b.clone().sub(c);
+    const len=st.a.distanceTo(st.b);
+    addHit([p0,p0.clone().lerp(p1,.25),p0.clone().lerp(p1,.5),p0.clone().lerp(p1,.75),p1],{
+      kind:"straight",index:i,length:len,label:"Odcinek prosty "+(i+1)
+    });
+    if(i<n){
+      const theta=ID.th[i]*D,center=st.b.clone().addScaledVector(ID.cs[i],ID.R[i]);
+      const arc=[];
+      const steps=Math.max(8,Math.ceil(Math.abs(ID.th[i])/5));
+      for(let j=0;j<=steps;j++){
+        const ang=theta*j/steps;
+        arc.push(center.clone().addScaledVector(ID.cs[i],-ID.R[i]*Math.cos(ang)).addScaledVector(ID.d[i],ID.R[i]*Math.sin(ang)).sub(c));
+      }
+      addHit(arc,{
+        kind:"arc",index:i,length:Math.abs(theta*ID.R[i]),angle:Math.abs(ID.th[i]),radius:ID.R[i],label:"Łuk gięcia "+(i+1)
+      });
+    }
+  }
+  let tot=0;for(let i=0;i<=n;i++){tot+=ID.St[i].b.distanceTo(ID.St[i].a);if(i<n)tot+=ID.th[i]*D*ID.R[i];}
+  modelG.userData={sz,tot};
+}
+const ray=new THREE.Raycaster(),mv2=new THREE.Vector2();let dn=null,modelSelectionKey=null;
+function clearModelSelection(){
+  if(modelSelection){modelG.remove(modelSelection);modelSelection.geometry.dispose();modelSelection.material.dispose();modelSelection=null;}
+  modelSelectionKey=null;
+}
+cv.addEventListener("pointerdown",e=>{dn={x:e.clientX,y:e.clientY,button:e.button,shift:e.shiftKey};});
+cv.addEventListener("pointerup",e=>{
+  if(!MV||!dn||dn.button!==0||dn.shift||Math.hypot(e.clientX-dn.x,e.clientY-dn.y)>5){dn=null;return;}
+  const rc=cv.getBoundingClientRect();mv2.set((e.clientX-rc.left)/rc.width*2-1,-((e.clientY-rc.top)/rc.height)*2+1);ray.setFromCamera(mv2,cam);
+  const h=ray.intersectObjects(modelHitTargets,false)[0];dn=null;
+  if(!h)return;
+  const d=h.object.userData,key=d.kind+":"+d.index;
+  if(modelSelectionKey===key){clearModelSelection();document.getElementById("dst").innerHTML="Zaznaczenie usunięte. Kliknij odcinek lub łuk, aby ponownie zobaczyć jego parametry.";return;}
+  clearModelSelection();
+  modelSelection=new THREE.Mesh(h.object.geometry.clone(),new THREE.MeshStandardMaterial({color:0xffb347,emissive:0x8a3d00,emissiveIntensity:.75,roughness:.38,metalness:.18,side:THREE.DoubleSide}));
+  modelSelection.renderOrder=5;modelG.add(modelSelection);modelSelectionKey=key;
+  const el=document.getElementById("dst");
+  if(d.kind==="straight")el.innerHTML="<b>"+d.label+"</b><br>Długość odcinka: "+fmt(d.length)+" mm<br>Długość całego drutu: "+fmt(modelG.userData.tot)+" mm";
+  else el.innerHTML="<b>"+d.label+"</b><br>Długość łuku: "+fmt(d.length)+" mm<br>Kąt gięcia: "+fmt(d.angle)+"°<br>Promień osi drutu: "+fmt(d.radius)+" mm<br>Długość całego drutu: "+fmt(modelG.userData.tot)+" mm";
+});
+function setMV(on){
+  if(on===MV||!HAS)return;MV=on;const vb=document.getElementById("vm");
+  if(on){saved=new Map();sc.children.forEach(o=>{if(!o.isLight&&o!==modelG){saved.set(o,o.visible);o.visible=false;}});modelG.visible=true;saved.set("c",[tgt.clone(),dist]);tgt.set(0,0,0);dist=Math.max(60,modelG.userData.sz*1.6);vb.textContent="Wróć do animacji";document.getElementById("dst").innerHTML="Kliknij odcinek lub gięcie, aby zobaczyć jego długość. Długość całego drutu: "+fmt(modelG.userData.tot)+" mm";}
+  else{modelG.visible=false;saved.forEach((v,o)=>{if(o!=="c")o.visible=v;});const c=saved.get("c");tgt.copy(c[0]);dist=c[1];vb.textContent="Pokaż cały model";}
+}
+document.getElementById("vm").onclick=()=>setMV(!MV);
+document.getElementById("zi").onclick=()=>{dist=Math.max(25,dist*.82)};document.getElementById("zo").onclick=()=>{dist=Math.min(900,dist*1.22)};
+cv.addEventListener("wheel",e=>{e.preventDefault();dist=Math.max(25,Math.min(900,dist*(1+Math.sign(e.deltaY)*.1)));},{passive:false});
+const ptr=new Map();let pd=0;
+cv.addEventListener("pointerdown",e=>{ptr.set(e.pointerId,e);if(ptr.size==2){const a=[...ptr.values()];pd=Math.hypot(a[0].clientX-a[1].clientX,a[0].clientY-a[1].clientY);}});
+cv.addEventListener("pointermove",e=>{if(!ptr.has(e.pointerId))return;ptr.set(e.pointerId,e);if(ptr.size==2){const a=[...ptr.values()],d=Math.hypot(a[0].clientX-a[1].clientX,a[0].clientY-a[1].clientY);if(pd>0)dist=Math.max(25,Math.min(900,dist*pd/d));pd=d;}});
+["pointerup","pointercancel"].forEach(ev=>cv.addEventListener(ev,e=>{ptr.delete(e.pointerId);pd=0;}));
+// Import STEP/IGES: rozpoznanie osi drutu, a gdy plik zawiera złożenie/bryły,
+// awaryjny podgląd pełnej geometrii przez OpenCascade WebAssembly.
+let occtPromise=null,CAD_VIEW=false;
+function getOCCT(){
+  if(!window.occtimportjs)throw new Error("Nie załadowała się biblioteka OpenCascade. Sprawdź połączenie z internetem i odśwież stronę.");
+  if(!occtPromise)occtPromise=window.occtimportjs();
+  return occtPromise;
+}
+function showCADMeshes(result,fileName){
+  if(!result||!result.success||!Array.isArray(result.meshes)||!result.meshes.length)throw new Error("OpenCascade nie zwrócił geometrii z tego pliku.");
+  clearModelSelection();while(modelG.children.length)modelG.remove(modelG.children[0]);modelHitTargets.length=0;
+  const makeNode=node=>{
+    const group=new THREE.Group();group.name=node.name||"CAD";
+    (node.meshes||[]).forEach(index=>{
+      const src=result.meshes[index];if(!src||!src.attributes||!src.attributes.position)return;
+      const pos=src.attributes.position.array;if(!pos||pos.length<9)return;
+      const geo=new THREE.BufferGeometry();geo.setAttribute("position",new THREE.Float32BufferAttribute(pos,3));
+      if(src.attributes.normal&&src.attributes.normal.array)geo.setAttribute("normal",new THREE.Float32BufferAttribute(src.attributes.normal.array,3));
+      if(src.index&&src.index.array&&src.index.array.length)geo.setIndex(src.index.array);
+      if(!geo.attributes.normal)geo.computeVertexNormals();
+      const color=src.color&&src.color.length>=3?new THREE.Color(src.color[0],src.color[1],src.color[2]):new THREE.Color(0x9aa7b8);
+      const mesh=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color,metalness:.15,roughness:.58,side:THREE.DoubleSide}));
+      mesh.name=src.name||"Element CAD";mesh.castShadow=true;mesh.receiveShadow=true;group.add(mesh);
+    });
+    (node.children||[]).forEach(child=>group.add(makeNode(child)));return group;
+  };
+  modelG.add(makeNode(result.root||{meshes:result.meshes.map((_,i)=>i),children:[]}));
+  const box=new THREE.Box3().setFromObject(modelG);if(box.isEmpty())throw new Error("Plik odczytano, ale nie znaleziono widocznych powierzchni.");
+  const center=box.getCenter(new THREE.Vector3());modelG.position.sub(center);const size=box.getSize(new THREE.Vector3());
+  modelG.userData={sz:Math.max(size.x,size.y,size.z,1),tot:0};CAD_VIEW=true;HAS=true;MV=false;
+  document.getElementById("vm").textContent="Pokaż cały model CAD";
+  document.getElementById("dst").textContent="Podgląd brył CAD. Nie znaleziono jeszcze osi drutu do symulacji gięcia.";
+  document.getElementById("msg").textContent="Wczytano model CAD: "+fileName+". Elementy siatki: "+result.meshes.length+". To pełny podgląd brył/złożenia; do programu gięcia potrzebna jest oś drutu.";
+  setMV(true);
+}
+async function handleCADFile(f){
+  const ext=f.name.toLowerCase().split(".").pop();
+  if(!["stp","step","igs","iges"].includes(ext)){msg(new Error("Obsługiwane formaty: .stp, .step, .igs, .iges."));return;}
+  document.getElementById("msg").textContent="Wczytywanie "+f.name+"…";
+  try{
+    const bytes=new Uint8Array(await f.arrayBuffer()),textData=new TextDecoder().decode(bytes);
+    try{const m=(ext==="igs"||ext==="iges")?parseIGES(textData):parseSTEP(textData);applyModel(m);return;}
+    catch(wireError){document.getElementById("msg").textContent="Nie udało się jednoznacznie odczytać osi drutu. Wczytuję pełną geometrię CAD…";}
+    const occt=await getOCCT(),params={linearUnit:"millimeter",linearDeflectionType:"absolute_value",linearDeflection:.12,angularDeflection:.25};
+    const result=(ext==="igs"||ext==="iges")?occt.ReadIgesFile(bytes,params):occt.ReadStepFile(bytes,params);
+    showCADMeshes(result,f.name);
+  }catch(er){msg(er instanceof Error?er:new Error(String(er)));}
+}
+document.getElementById("fl").onchange=e=>{const f=e.target.files[0];if(f)handleCADFile(f);e.target.value="";};
+const loadF=f=>handleCADFile(f);
+addEventListener("dragover",e=>e.preventDefault());addEventListener("drop",e=>{e.preventDefault();const f=e.dataTransfer&&e.dataTransfer.files[0];if(f)loadF(f);});
+document.getElementById("wsel").onchange=e=>{const w=WIRES[+e.target.value];if(w)applyModel(w);};
+document.getElementById("bc").onclick=()=>{document.getElementById("modelCoords").value=document.getElementById("co").value;try{applyModel(parseCoords(document.getElementById("co").value,parseFloat(document.getElementById("wd").value)||3))}catch(x){msg(x)}};
+function cycleTime(){
+  const g=(id,d)=>{const v=parseFloat(String(document.getElementById(id).value).replace(",","."));return v>0?v:d;};
+  const vf=g("pf",100),vr=g("pr",.5),vb=g("pb",.8),th=parseFloat(document.getElementById("ph").value)||.6,tz=parseFloat(document.getElementById("pz").value)||.2,tc=parseFloat(document.getElementById("pc").value)||.4;
+  let tot=0,pv=null;ROWS.forEach((r,i)=>{const b=bends[i];let t=r.e===null?r.L/vf:(feedRotateSeparateByRow[i]?r.L/vf+Math.abs(r.e)/180*vr:Math.max(r.L/vf,Math.abs(r.e)/180*vr));
+    if(pv&&b&&(b.pk!==pv.pk||Math.abs(b.phi-pv.phi)>1e-3||Math.abs(b.Ox-pv.Ox)>1e-3))t+=th;t+=Math.abs(r.bw)/90*vb+tz+(Math.abs(r.bw)>MAXSWEEP?tz:0);pv=b;tot+=t;});
+  return tot+ID.tail/vf+tc;
+}
+function bestVariant(){
+  const n=ID.th.length,cand=[],nb=Math.min(n,6);
+  if(n>6){const gv=s0=>{const s=[s0];for(let i=1;i<n;i++){let b0=1e9,pick=0;[0,1].forEach(x=>{const e=Math.abs(wrap(ID.roll[i]+180*(x-s[i-1])));if(e<b0-1e-9){b0=e;pick=x;}});s.push(pick);}return s;};
+    let best=null;for(const s0 of [0,1]){sg=gv(s0);build();assignTools();const infe=bends.filter(b=>b.amax<b.full-1e-6||b.gmin<ID.wd-.05||(b.tool||"").includes("✗")).length,ok=check(true).ok;
+      if(!best||(ok&&!best.ok)||(ok==best.ok&&infe<best.infe))best={s:sg.slice(),ok,infe};}
+    sg=best.s;build();assignTools();return;}
+  for(let k=0;k<(1<<nb);k++){const s=[];for(let i=0;i<n;i++)s.push(i<nb?(k>>i)&1:s[i-1]);
+    sg=s.slice();build();assignTools();
+    const infe=bends.filter(b=>b.amax<b.full-1e-6||b.gmin<ID.wd-.05||(b.tool||"").includes("✗")).length;
+    const es=ROWS.slice(1).map(r=>r.e);let run=0,mx=0,g0=0;es.forEach(e=>{const g=Math.sign(e);run=g==g0?run+e:e;g0=g;mx=Math.max(mx,Math.abs(run));});
+    cand.push({s,infe,pen:mx>180?1:0,t:cycleTime()});}
+  cand.sort((a,b)=>a.infe-b.infe||a.pen-b.pen||a.t-b.t);
+  let ch=cand[0];for(const c of cand.slice(0,16)){sg=c.s.slice();build();assignTools();if(check(true).ok){ch=c;break;}}
+  sg=ch.s.slice();build();assignTools();
+}
+function refineVariant(){
+  let c=check(false,true),cnt=c.ok?0:c.list.length;
+  for(let it=0;it<6&&cnt>0;it++){
+    const rows=[...new Set(c.list.map(x=>Math.min(x.row,bends.length-1)))].sort((a,b)=>a-b);let best=null;
+    for(const j of rows.slice(0,3)){sg[j]^=1;build();assignTools();const c2=check(false,true),n2=c2.ok?0:c2.list.length;if(!best||n2<best.n)best={j,n:n2,c:c2};sg[j]^=1;}
+    if(!best||best.n>=cnt)break;sg[best.j]^=1;cnt=best.n;c=best.c;}
+  build();assignTools();
+}
+function evalRows(c){
+  ROWS.forEach((r,i)=>{r.issues=[];const b=bends[i];if(!b)return;
+    if((b.tool||"").includes("✗"))r.issues.push("trzpień:"+b.tool.split("✗")[1]);
+    if(b.amax!==undefined&&b.amax<b.full-1e-6)r.issues.push("bolec ześlizguje się: przy L="+fmt(r.L)+" możliwe do "+fmt(b.amax)+"° (potrzeba "+fmt(b.full)+"°)");
+    if(b.gmin!==undefined&&b.gmin<ID.wd-.05)r.issues.push("bolec S1 zagniata drut: szczelina do trzpienia "+fmt(b.gmin)+" mm, Ø drutu "+fmt(ID.wd)+" mm");
+    r.info=b.d0!==undefined?"odl. bolec–trzpień "+fmt(b.d0)+" mm, bolec dosięga "+fmt(b.t0c)+" mm od gięcia":"";});
+  (c.list||[]).forEach(x=>{if(x.msg.startsWith("trzpień "))return;const r=ROWS[Math.min(x.row,ROWS.length-1)],m="kolizja: "+x.msg.split("(")[0].trim();if(r&&!r.issues.includes(m))r.issues.push(m);});
+}
+function numVal(v,d){const n=parseFloat(String(v).replace(",","."));return Number.isFinite(n)?n:d;}
+
+function recalcDefaultGeometry(){
+  const tp=document.getElementById("tp");if(!tp)return;
+  const rows=[...tp.querySelectorAll("tr")].slice(1),by={};
+  rows.forEach(tr=>{const a=[...tr.querySelectorAll("input")];if(a.length>=4){
+    const id=a[0].value.trim();by[id]={a,d:numVal(a[3].value,0)};
+  }});
+  if(!["D1","D2","D3","D4"].every(id=>by[id]))return;
+  const hd=45,wd=numVal(document.getElementById("wd").value,4.5); // stała baza rozstawu kołków, niezależna od Ø głowicy
+  const clearance=5.95;
+  const base={
+    D1:{x:8.36,y:-7.6,d:10.5},D2:{x:8.36,y:7.6,d:10.5},
+    D3:{x:-11.98,y:5.65,d:6.6},D4:{x:-11.98,y:-5.65,d:6.6}
+  };
+  const radii={};
+  for(const id of Object.keys(base)){
+    radii[id]=hd/2-clearance-by[id].d/2;
+    if(!(radii[id]>0))return;
+  }
+  const put=(id,x,y)=>{const a=by[id].a;a[1].value=x.toFixed(2);a[2].value=y.toFixed(2);};
+  // Każdy kołek ma własną średnicę i własny promień położenia.
+  for(const id of ["D1","D2","D3","D4"]){
+    const b=base[id],len=Math.hypot(b.x,b.y),scale=radii[id]/Math.hypot(b.x,b.y);
+    put(id,b.x*scale,b.y*scale);
+  }
+  // S1 utrzymuje bazową odległość środków, skorygowaną o połowę zmiany
+  // największego kołka oraz średnicy samego S1 i drutu.
+  const bp=document.getElementById("bp");
+  const s1=[...bp.querySelectorAll("tr")].slice(1).find(tr=>tr.querySelector("input")?.value.trim()==="S1");
+  if(s1){
+    const a=[...s1.querySelectorAll("input")],s1d=numVal(a[2]?.value,10.2);
+    const maxPinD=Math.max(...Object.keys(base).map(id=>by[id].d));
+    const refDist=Math.hypot(7.6,27.3-8.36);
+    const target=refDist+(maxPinD-10.5)/2+(s1d-10.2)/2+(wd-4.5);
+    // S1 porusza się po promieniu głowicy; przyjmujemy najdalej wysunięty kołek.
+    const far=["D1","D2","D3","D4"].map(id=>({id,d:by[id].d,x:Math.abs(numVal(by[id].a[1].value,0)),y:Math.abs(numVal(by[id].a[2].value,0))}))
+      .sort((a,b)=>b.d-a.d)[0];
+    const cross=Math.sqrt(Math.max(0,target*target-far.y*far.y));
+    if(Number.isFinite(cross))a[1].value=(far.x+cross).toFixed(2);
+  }
+}
+
+
+function checkPinSpacing(){
+  const box=document.getElementById("pinSpacingCheck");
+  const tp=document.getElementById("tp");
+  const wd=numVal(document.getElementById("wd")?.value,3);
+  if(!box||!tp)return;
+  const pins={};
+  [...tp.querySelectorAll("tr")].slice(1).forEach(tr=>{
+    const a=[...tr.querySelectorAll("input")];
+    if(a.length>=4){
+      const id=a[0].value.trim();
+      pins[id]={y:numVal(a[2].value,NaN),d:numVal(a[3].value,NaN)};
+    }
+  });
+  const pairs=[["D1","D2"],["D3","D4"]];
+  const lines=[];
+  let ok=true;
+  pairs.forEach(([a,b])=>{
+    if(!pins[a]||!pins[b]||!Number.isFinite(pins[a].y)||!Number.isFinite(pins[b].y)||
+       !Number.isFinite(pins[a].d)||!Number.isFinite(pins[b].d))return;
+    const center=Math.abs(pins[a].y-pins[b].y);
+    const free=center-(pins[a].d+pins[b].d)/2;
+    const margin=free-wd;
+    const pass=margin>=-0.001;
+    if(!pass)ok=false;
+    lines.push(`${a}/${b}: rozstaw osi Y ${center.toFixed(2)} mm · wolna szczelina ${free.toFixed(2)} mm · drut Ø${wd.toFixed(2)} mm · ${pass?"zgodny":"za mało miejsca"}`);
+  });
+  if(!lines.length){box.textContent="Nie można sprawdzić rozstawu: brakuje danych D1–D4.";return;}
+  box.style.borderColor=ok?"#299d62":"#d97706";
+  box.style.background=ok?"rgba(41,157,98,.08)":"rgba(217,119,6,.09)";
+  box.innerHTML="<b>"+(ok?"Rozstaw kołków zgodny z Ø drutu":"Uwaga: drut nie mieści się między kołkami")+"</b><br>"+lines.join("<br>")+
+    "<br><span style='opacity:.8'>Warunek: odległość osi Y − połowa średnicy obu kołków ≥ Ø drutu.</span>";
+}
+
+function optimizeTools(){
+  const out=document.getElementById("cm");if(!HAS){out.textContent="Najpierw wczytaj model.";return;}
+  const wd=ID.wd,wr=wd/2,cl=[];
+  ID.R.map(R=>Math.max(R-wr,0)).sort((a,b)=>a-b).forEach(r=>{const c=cl.find(x=>Math.abs(x.r-r)<=.6);if(c){c.n++;c.r=Math.max(c.r,r);}else cl.push({r,n:1});});
+  cl.sort((a,b)=>b.n-a.n);const A=cl[0],B=cl[1]||cl[0],pd=c=>Math.max(1,+(2*c.r).toFixed(2)),gp=.05,ph=+(wd+2).toFixed(1),yA=pd(A)/2+wr+gp,yB=pd(B)/2+wr+gp;
+  const hd=parseFloat(document.getElementById("hd").value)||45,xMax=(r,y)=>Math.sqrt(Math.max(0,Math.pow(hd/2-1-r,2)-y*y)),xp=+Math.max(3,Math.min(xMax(pd(A)/2,yA),xMax(pd(B)/2,yB))).toFixed(1);
+  const rows=[["D1",xp,-yA,pd(A),ph,0,"-",1],["D2",xp,yA,pd(A),ph,0,"-",1],["D3",-xp,yB,pd(B),ph,0,"-",1],["D4",-xp,-yB,pd(B),ph,0,"-",1]].map(r=>r.map(v=>typeof v=="number"?+v.toFixed(2):v));
+  const reach=Math.max(...rows.map(r=>Math.hypot(r[1],r[2])+r[3]/2)),rb=3,Rb=+(Math.max(reach+wd+rb,hd/2+rb)).toFixed(1);
+  
+mkT("tp",["Nr","X","Y","D","Wysokość","Rowek","Rolka","Stopień"],rows);
+  mkT("bp",["Nr","R","D","Wysokość","Kąt","Rowek","Rolka","Stopień"],[["S1",Rb,2*rb,+(wd+3.5).toFixed(1),0,0,"-",1]]);
+  document.getElementById("tt").value="5";autoFit=true;CFG=readCfg();drawHead();drawPreview();bestVariant();if(ID.th.length>6)refineVariant();table();tm=0;
+  const bad=bends.filter(b=>b.amax<b.full-1e-6).length;
+  out.textContent="Dobrano narzędzia: trzpienie Ø"+fmt(pd(A))+" i Ø"+fmt(pd(B))+" (po dwa, po obu stronach drutu), bolec Ø"+2*rb+" na R "+fmt(Rb)+" (uwzględniono Ø głowicy "+fmt(hd)+" mm i odstęp bolca od kołków równy Ø drutu). "+(cl.length>2?"Model ma więcej niż dwa promienie, dobrano dwa najczęstsze. ":"")+(bad?bad+" gięć nadal niewykonalnych z powodu krótkich odcinków (zobacz kolumnę Wykonalność).":"Wszystkie gięcia wykonalne.");
+}
+document.getElementById("bo").onclick=optimizeTools;
+function modelFromRows(rows,tail,wd){
+  let p=V(0,0,0),t=V(1,0,0),dv=V(0,1,0);const St=[],R=[],s=[],centers=[];
+  rows.forEach(r=>{const a=p.clone();p=p.clone().addScaledVector(t,r.L);St.push({a,b:p.clone(),dir:t.clone()});
+    if(r.e){const ang=r.e*D,n=new THREE.Vector3().crossVectors(t,dv);dv=dv.clone().multiplyScalar(Math.cos(ang)).addScaledVector(n,Math.sin(ang));}
+    const sg=Math.sign(r.bw),c0=dv.clone().multiplyScalar(sg),t0=t.clone(),th=Math.abs(r.bw)*D,q=p.clone().addScaledVector(c0,r.r);
+    centers.push(c0.clone());
+    p=q.clone().addScaledVector(c0,-r.r*Math.cos(th)).addScaledVector(t0,r.r*Math.sin(th));t=t0.clone().multiplyScalar(Math.cos(th)).addScaledVector(c0,Math.sin(th));
+    dv=c0.clone().multiplyScalar(Math.cos(th)).addScaledVector(t0,-Math.sin(th)).multiplyScalar(sg);R.push(r.r);s.push(r.bw<0?1:0);});
+  St.push({a:p.clone(),b:p.clone().addScaledVector(t,tail),dir:t.clone()});
+  const m=fromChain(St,R,wd);
+  // W ręcznej geometrii kierunek do środka łuku wynika bezpośrednio z płaszczyzny gięcia.
+  // Nie wolno zastępować go dwusieczną kierunków odcinków (d2-d1), bo przesuwa to środek łuku.
+  m.cs=centers;
+  const normals=centers.map((c,i)=>new THREE.Vector3().crossVectors(m.d[i],c).normalize());
+  m.roll=[0];
+  for(let i=1;i<centers.length;i++){
+    const ce=new THREE.Vector3().crossVectors(normals[i-1],m.d[i]).normalize();
+    m.roll.push(Math.atan2(new THREE.Vector3().crossVectors(ce,centers[i]).dot(m.d[i]),ce.dot(centers[i]))/D);
+  }
+  m.manualGeo=true;
+  return {m,s};
+}
+function geoTableValues(){
+  return [...document.getElementById("gt").querySelectorAll("tr")].slice(1).map((tr,i)=>[i+1,...[...tr.querySelectorAll("input[data-col]")].map(inp=>{const v=parseFloat(String(inp.value).replace(",","."));return inp.value.trim()===""||!Number.isFinite(v)?null:v;})]);
+}
+function renderGeoTable(rows){
+  const t=document.getElementById("gt"),heads=["Nr","L [mm]","EW [°]","BW [°]","r wewn. [mm]","Akcje"];
+  t.innerHTML="<tr>"+heads.map(x=>"<th>"+x+"</th>").join("")+"</tr>"+rows.map((r,i)=>"<tr><td>"+(i+1)+"</td>"+[1,2,3,4].map(c=>"<td><div class=\"geo-num\"><input data-col=\""+c+"\" inputmode=\"decimal\" value=\""+(r[c]??"")+"\">"+(c===2||c===3?"<button type=\"button\" class=\"g s geo-sign\" data-action=\"sign\" data-col=\""+c+"\" data-row=\""+i+"\" title=\"Zmień znak\">±</button>":"")+"</div></td>").join("")+"<td><button type=\"button\" class=\"g s\" data-action=\"insert\" data-row=\""+i+"\" title=\"Wstaw wiersz poniżej\">＋</button> <button type=\"button\" class=\"g s\" data-action=\"delete\" data-row=\""+i+"\" title=\"Usuń wiersz\">×</button></td></tr>").join("");
+}
+function geoRowsForModel(rd){
+  const rows=[];let tail=0,carry=0;
+  rd.forEach((r,i)=>{
+    const L=r[1]===null?0:r[1],ew=r[2]===null?0:r[2],bw=r[3],rad=r[4];
+    if(bw!==null&&Math.abs(bw)>1e-8){
+      if(!(rad!==null&&rad>=0))throw new Error("Wiersz "+(i+1)+": podaj promień wewnętrzny r (może być 0)");
+      rows.push({L:L+carry,e:rows.length?ew*conv:0,bw,r:rad+((parseFloat(String(document.getElementById("wd").value).replace(",","."))||3)/2)});carry=0;
+    }else if(i===rd.length-1){tail=L+carry;}
+    else carry+=L;
+  });
+  if(!rows.length)throw new Error("Wpisz co najmniej jedno gięcie (L, EW, BW, r)");
+  return {rows,tail};
+}
+function fillGeo(){
+  const rows=HAS?ROWS.map((r,i)=>[i+1,+r.L.toFixed(3),r.e===null?"":+(r.e*conv).toFixed(2),+r.bw.toFixed(2),+Math.max(0,r.r-ID.wd/2).toFixed(3)]):[[1,"","","",""]];
+  if(HAS)rows.push([ROWS.length+1,+ID.tail.toFixed(3),"","",""]);
+  renderGeoTable(rows);drawGeoPreview();
+}
+function applyGeo(){document.getElementById("wd").readOnly=false;
+  const wd=parseFloat(String(document.getElementById("wd").value).replace(",","."))||3;
+  const parsed=geoRowsForModel(geoTableValues()),res=modelFromRows(parsed.rows,parsed.tail,wd);
+  ID=res.m;sg=res.s;build();if(!CFG)CFG=readCfg();assignTools();HAS=true;drawHead();table();tm=0;buildModelView();drawGeoPreview();
+  document.getElementById("co").value=corners(ID).map((v,i)=>[v.x,v.y,v.z].map(x=>x.toFixed(3)).join(" ")+(i>0&&i<=ID.R.length?" "+(+ID.R[i-1].toFixed(3)):"")).join("\n");
+  document.getElementById("modelCoords").value=document.getElementById("co").value;
+  document.getElementById("gm").textContent="Zastosowano geometrię: "+parsed.rows.length+" gięć, drut Ø"+fmt(wd)+" mm.";
+}
+
+let dfc=0;
+function updDist(hp,idx){ /* diagnostyka szczeliny S1 usunięta – miejsce zajmuje wydajność */ }
+
+let SL=87,rollX=215,autoFit=false;
+function placeSleeve(){const v=parseFloat(String(document.getElementById("sl").value).replace(",","."));SL=v>=40?v:87;car.position.x=SL-16;const rx=SL+101;
+  sc.children.forEach(o=>{if(o.isMesh&&Math.abs(o.position.x-rollX)<.01)o.position.x=rx;});rollX=rx;}
+function updLegend(){const el=document.getElementById("leg");if(!el||!CFG)return;el.innerHTML="<b>Narzędzia:</b> "+CFG.pins.map(p=>'<span style="color:'+(["D3","D4"].includes(p.id)?"#3498db":"#f1c40f")+'">■</span> '+p.id+" Ø"+fmt(p.d)+(["D3","D4"].includes(p.id)?" – podpierający":" – pasywny")).join(" · ")+(CFG.bolts.length?" · "+CFG.bolts.map(b=>'<span style="color:#e74c3c">■</span> '+b.id+" Ø"+fmt(b.d)+" na R "+fmt(b.r)+" – aktywny").join(" · "):"")+' · <span style="color:#c3cad4">■</span> głowica Ø'+fmt(CFG.hd)+' · <span style="color:#8e44ad">■</span> tuleja z zaciskiem · <span style="color:#27ae60">■</span> rolki · <span style="color:#b03a2e">■</span> nóż.';}
+function mkLabel(txt,col,sx){const c=document.createElement("canvas");c.width=160;c.height=48;const g=c.getContext("2d");g.font="bold 26px sans-serif";g.textAlign="center";g.lineWidth=5;g.strokeStyle="#000";g.strokeText(txt,80,34);g.fillStyle=col||"#fff";g.fillText(txt,80,34);
+  const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(c),depthTest:false}));sp.scale.set(sx||30,9,1);return sp;}
+// podgląd głowicy 3D obok konfiguracji
+const cv2=document.getElementById("cv2"),r2=new THREE.WebGLRenderer({canvas:cv2,antialias:true,alpha:true}),sc2=new THREE.Scene(),cam2=new THREE.PerspectiveCamera(35,1,1,3000),grp2=new THREE.Group();
+sc2.add(new THREE.HemisphereLight(0xffffff,0x6a7585,.95));{const l=new THREE.DirectionalLight(0xffffff,1);l.position.set(60,90,140);sc2.add(l);}sc2.add(grp2);
+let az2=.4,el2=.9,d2=150;
+function render2(){const w=cv2.clientWidth||300,h=cv2.clientHeight||260;r2.setSize(w,h,false);cam2.aspect=w/h;cam2.updateProjectionMatrix();
+  cam2.position.set(d2*Math.cos(el2)*Math.sin(az2),d2*Math.sin(el2)*-1,d2*Math.cos(el2)*Math.cos(az2)+0);cam2.up.set(0,1,0);cam2.position.y=-d2*Math.sin(el2)*0+d2*Math.sin(el2)*0-d2*Math.sin(el2)*0+0;
+  cam2.position.set(d2*Math.cos(el2)*Math.sin(az2),-d2*Math.sin(el2)*.6,d2*Math.cos(el2)*Math.cos(az2));cam2.lookAt(0,0,-10);r2.render(sc2,cam2);}
+function drawPreview(){
+  while(grp2.children.length)grp2.remove(grp2.children[0]);if(!CFG)return;
+  const wr=(parseFloat(String(document.getElementById("wd").value).replace(",","."))||3)/2,zt=-wr,zh=zt-CFG.hh,m2=(g,mat,x,y,z)=>{const o=new THREE.Mesh(g,mat);o.position.set(x,y,z);grp2.add(o);return o;};
+  m2(new THREE.BoxGeometry(CFG.hw,CFG.hw,26),M(0x7d8794,.6,.45),0,0,zh-13);
+  m2(cz(CFG.hd/2,CFG.hh,64),M(0xc3cad4,.8,.3),0,0,(zh+zt)/2);
+  CFG.pins.forEach(p=>{const col=["D3","D4"].includes(p.id)?0x3498db:0xf1c40f;
+    m2(cz(p.d/2,p.h,32),M(col,.6,.3),p.y,-p.x,zt+p.h/2);const lb=mkLabel(p.id,"#fff",22);lb.position.set(p.y,-p.x,zt+p.h+5);grp2.add(lb);});
+  CFG.bolts.forEach(b=>{const a=b.ang*D,x=-b.r*Math.cos(a)*0+b.r*Math.sin(a),y=-b.r*Math.cos(a);m2(cz(b.d/2,b.h,32),M(0xe74c3c,.6,.3),x,y,zt+b.h/2);const lb=mkLabel(b.id,"#fff",22);lb.position.set(x,y,zt+b.h+5);grp2.add(lb);
+    const ring=new THREE.Mesh(new THREE.TorusGeometry(b.r,.25,6,96),M(0xe74c3c,.2,.6));ring.position.z=zt+b.h/2;grp2.add(ring);});
+  const w=m2(new THREE.CylinderGeometry(wr,wr,CFG.hd*1.6,20),M(0xc98a6a,.75,.3),0,0,0);w.rotation.z=0;
+  const ax=new THREE.Mesh(new THREE.CylinderGeometry(.4,.4,CFG.hd*1.8,8),M(0x888888,.1,.9));grp2.add(ax);
+  const l1=mkLabel("X (oś drutu)","#ffd54f",34);l1.position.set(0,-CFG.hd*.85,2);grp2.add(l1);const l2=mkLabel("Y","#80cbc4",16);l2.position.set(CFG.hd*.6,0,2);grp2.add(l2);
+  const dim=mkLabel("Ø"+fmt(CFG.hd),"#fff",26);dim.position.set(0,CFG.hd/2+7,zt+2);grp2.add(dim);
+  d2=Math.max(80,CFG.hd*2.6);render2();
+}
+{let dn2=false,lx2=0,ly2=0;cv2.addEventListener("pointerdown",e=>{dn2=true;lx2=e.clientX;ly2=e.clientY;cv2.setPointerCapture(e.pointerId)});cv2.addEventListener("pointerup",()=>dn2=false);
+  cv2.addEventListener("pointermove",e=>{if(!dn2)return;az2-=(e.clientX-lx2)*.01;el2=Math.max(-.2,Math.min(1.55,el2+(e.clientY-ly2)*.01));lx2=e.clientX;ly2=e.clientY;render2();});
+  cv2.addEventListener("wheel",e=>{e.preventDefault();d2=Math.max(40,Math.min(500,d2*(1+Math.sign(e.deltaY)*.1)));render2();},{passive:false});
+  addEventListener("resize",()=>render2());}
+const prevUpd=()=>{try{CFG=readCfg();drawPreview();}catch(e){}};
+// Ø głowicy zmienia tylko korpus – nie przelicza położenia D1–D4.
+document.getElementById("hd").addEventListener("input",()=>{prevUpd();if(HAS){CFG=readCfg();drawHead();assignTools();table();tm=0;}});
+// Ø drutu nadal może przeliczać geometrię narzędzi.
+document.getElementById("wd").addEventListener("input",()=>{recalcDefaultGeometry();checkPinSpacing();prevUpd();if(HAS){CFG=readCfg();drawHead();assignTools();table();tm=0;}});
+["hh","hw"].forEach(id=>document.getElementById(id).addEventListener("input",prevUpd));
+document.getElementById("tp").addEventListener("input",e=>{if(e.target.matches("input")&&(e.target.parentElement.cellIndex===2||e.target.parentElement.cellIndex===3)){recalcDefaultGeometry();checkPinSpacing();prevUpd();if(HAS){CFG=readCfg();drawHead();assignTools();table();tm=0;}}else prevUpd();});
+document.getElementById("bp").addEventListener("input",e=>{if(e.target.matches("input")&&e.target.parentElement.cellIndex===2){recalcDefaultGeometry();prevUpd();if(HAS){CFG=readCfg();drawHead();assignTools();table();tm=0;}}else prevUpd();});
+checkPinSpacing();
+function addGuides(){
+  const g=new THREE.Group();sc.add(g);
+  const up=new THREE.ArrowHelper(V(0,1,0),V(70,4,0),24,0xf39c12,6,3),dn=new THREE.ArrowHelper(V(0,-1,0),V(70,-4,0),24,0x2ecc71,6,3);g.add(up,dn);
+  const lu=mkLabel("BW− w górę","#ffb74d",34);lu.position.set(70,34,0);const ld=mkLabel("BW+ w dół","#81c784",34);ld.position.set(70,-34,0);g.add(lu,ld);
+  const pts=[V(0,-44,0),V(130,-44,0)],ln=new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0xffffff}));g.add(ln);
+  [0,130].forEach(x=>{g.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([V(x,-40,0),V(x,-48,0)]),new THREE.LineBasicMaterial({color:0xffffff})));});
+  const dl=mkLabel("130 mm: środek głowicy – tuleja","#fff",70);dl.position.set(65,-52,0);g.add(dl);
+}
+function calcPerf(){
+  if(!HAS||!ROWS.length)return;
+  const g=(id,d)=>{const v=parseFloat(String(document.getElementById(id).value).replace(",","."));return v>=0&&!isNaN(v)?v:d;};
+  const vf=g("pf",100)||500,vr=g("pr",.5)||.5,vb=g("pb",.8)||.8,th=g("ph",.6),tz=g("pz",.2),tc=g("pc",.4),f2=n=>(Math.round(n*100)/100).toString().replace(".",",");
+  let tot=0,pv=null,mx=0,mi=0;const rows=[];
+  ROWS.forEach((r,i)=>{const b=bends[i];let t=r.e===null?r.L/vf:(feedRotateSeparateByRow[i]?r.L/vf+Math.abs(r.e)/180*vr:Math.max(r.L/vf,Math.abs(r.e)/180*vr));
+    if(pv&&b&&(b.pk!==pv.pk||Math.abs(b.phi-pv.phi)>1e-3||Math.abs(b.Ox-pv.Ox)>1e-3))t+=th;
+    t+=Math.abs(r.bw)/90*vb+tz+(Math.abs(r.bw)>MAXSWEEP?tz:0);pv=b;rows.push(t);tot+=t;if(t>mx){mx=t;mi=i;}});
+  const tail=ID.tail/vf+tc;tot+=tail;
+  rows.forEach((t,i)=>{const e=document.getElementById("t"+i);if(e)e.textContent=f2(t);});
+  const e=document.getElementById("t"+ROWS.length);if(e)e.textContent=f2(tail);
+  document.getElementById("dst").innerHTML="Czas cyklu: <b>"+f2(tot)+" s/szt.</b> · Wydajność: <b>"+Math.floor(3600/tot)+" szt./h</b> · <b>"+f2(60/tot)+" szt./min</b><br>Średnio na jedno gięcie: <b>"+f2((tot-tail)/ROWS.length)+" s</b> (podanie, obrót, ewentualna zmiana trzpienia, gięcie, cofnięcie zabieraka); najdłuższe: wiersz "+(mi+1)+", "+f2(mx)+" s. L i EW są domyślnie liczone równocześnie; dla wiersza ustaw „Osobno”, aby wykonać je kolejno.";
+}
+// Podgląd geometrii ręcznej – jedna ciągła rura 3D, odświeżana przy każdej zmianie pola.
+const geoCv=document.getElementById("geoCv"),geoRenderer=new THREE.WebGLRenderer({canvas:geoCv,antialias:true,alpha:true});
+const geoScene=new THREE.Scene(),geoCamera=new THREE.PerspectiveCamera(38,1,.1,10000),geoGroup=new THREE.Group();geoScene.add(geoGroup);
+geoScene.add(new THREE.HemisphereLight(0xffffff,0x657080,1));const geoLight=new THREE.DirectionalLight(0xffffff,1.1);geoLight.position.set(80,100,120);geoScene.add(geoLight);
+let geoAz=.55,geoEl=.55,geoDist=130,geoDrag=false,geoX=0,geoY=0;
+function drawGeoPreview(){
+  if(!geoCv||!geoRenderer)return;
+  while(geoGroup.children.length){const o=geoGroup.children.pop();if(o.geometry)o.geometry.dispose();}
+  try{
+    const parsed=geoRowsForModel(geoTableValues()),wd=parseFloat(String(document.getElementById("wd").value).replace(",","."))||3,m=modelFromRows(parsed.rows,parsed.tail,wd).m,pts=modelPts(m);
+    if(pts.length>1){const bb=new THREE.Box3().setFromPoints(pts),center=bb.getCenter(V(0,0,0)),size=bb.getSize(V(0,0,0)),q=pts.map(v=>v.clone().sub(center));
+      const curve=new THREE.CurvePath();for(let i=1;i<q.length;i++)curve.add(new THREE.LineCurve3(q[i-1],q[i]));const mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,Math.max(64,q.length*5),wd/2,16,false),M(0xc98a6a,.72,.28));geoGroup.add(mesh);
+      geoDist=Math.max(35,size.length()*1.65);geoGroup.position.set(0,0,0);
+    }
+  }catch(e){/* Nie pokazuj błędu podczas wpisywania niekompletnego wiersza. */}
+  const w=geoCv.clientWidth||300,h=geoCv.clientHeight||260;geoRenderer.setSize(w,h,false);geoCamera.aspect=w/h;geoCamera.updateProjectionMatrix();
+  geoCamera.position.set(geoDist*Math.cos(geoEl)*Math.sin(geoAz),geoDist*Math.sin(geoEl),geoDist*Math.cos(geoEl)*Math.cos(geoAz));geoCamera.lookAt(0,0,0);geoRenderer.render(geoScene,geoCamera);
+}
+geoCv.addEventListener("pointerdown",e=>{geoDrag=true;geoX=e.clientX;geoY=e.clientY;geoCv.setPointerCapture(e.pointerId)});
+geoCv.addEventListener("pointerup",()=>geoDrag=false);geoCv.addEventListener("pointercancel",()=>geoDrag=false);
+geoCv.addEventListener("pointermove",e=>{if(!geoDrag)return;geoAz-=(e.clientX-geoX)*.01;geoEl=Math.max(-1.35,Math.min(1.35,geoEl+(e.clientY-geoY)*.01));geoX=e.clientX;geoY=e.clientY;drawGeoPreview();});
+geoCv.addEventListener("wheel",e=>{e.preventDefault();geoDist=Math.max(20,Math.min(5000,geoDist*(1+Math.sign(e.deltaY)*.1)));drawGeoPreview();},{passive:false});
+window.addEventListener("resize",drawGeoPreview);
+["pf","pr","pb","ph","pz","pc"].forEach(id=>{document.getElementById(id).oninput=calcPerf;});
+document.getElementById("gf").onclick=fillGeo;
+document.getElementById("ga").onclick=()=>{const rows=geoTableValues();rows.push([null,null,null,null,null]);renderGeoTable(rows);drawGeoPreview();};
+document.getElementById("gn").onclick=()=>{HAS=false;renderGeoTable([[null,null,null,null,null]]);drawGeoPreview();document.getElementById("gm").textContent="Nowa geometria – wpisz kolejne odcinki i gięcia.";};
+document.getElementById("gt").addEventListener("input",drawGeoPreview);
+document.getElementById("gt").addEventListener("click",e=>{const b=e.target.closest("button[data-action]");if(!b)return;const i=+b.dataset.row;if(b.dataset.action==="sign"){const input=b.parentElement.querySelector("input[data-col='"+b.dataset.col+"']");if(!input)return;const v=input.value.trim();input.value=v.startsWith("-")?v.slice(1):(v?"-"+v:"-");input.focus();try{input.setSelectionRange(input.value.length,input.value.length);}catch(_){}input.dispatchEvent(new Event("input",{bubbles:true}));return;}const rows=geoTableValues();if(b.dataset.action==="insert")rows.splice(i+1,0,[null,null,null,null,null]);else if(b.dataset.action==="delete"){if(rows.length<=1){rows.splice(0,1,[null,null,null,null,null]);}else rows.splice(i,1);}renderGeoTable(rows);drawGeoPreview();});
+document.getElementById("gz").onclick=()=>{try{applyGeo()}catch(e){document.getElementById("gm").textContent="Błąd: "+e.message}};
+fillGeo();
+document.getElementById("tt").onchange=()=>{CFG=readCfg();drawPreview();const d={"2":"Typ 2: trzpień mimośrodowy wokół mimośrodowego, drut przechodzi przez środek narzędzia.","3":"Typ 3: trzpień mimośrodowy wokół trzpienia centralnego (kołek na osi głowicy), drut nie przechodzi przez środek.","31":"Typ 31: trzpień mimośrodowy wokół mimośrodowego, drut nie musi przechodzić przez środek.","35":"Typ 35: kołek mimośrodowy wokół mimośrodowego trzpienia, drut nie przechodzi przez środek.","4":"Typ 4: jak typ 5.","5":"Typ 5: kołek mimośrodowy wokół mimośrodowego trzpienia, drut przechodzi przez środek narzędzia."};document.getElementById("cm").textContent=d[CFG.type]+(CFG.type=="3"?" Wybierany jest trzpień najbliższy osi głowicy.":" Typy inne niż 3 liczę na razie jak typ 5.");if(HAS){assignTools();table();tm=0;}};
+document.getElementById("bpt").onclick=()=>{try{const t=document.getElementById("pt").value;applyModel(/ISO-10303/.test(t)?parseSTEP(t):parseIGES(t));}catch(er){msg(er)}};
+mkT("tp",["Nr","X","Y","D","Wysokość","Rowek","Rolka","Stopień"],[["D1",8.36,-7.6,10.5,5.5,0,"-",1],["D2",8.36,7.6,10.5,5.5,0,"-",1],["D3",-11.98,5.65,6.6,5.5,0,"-",1],["D4",-11.98,-5.65,6.6,5.5,0,"-",1]]);
+mkT("bp",["Nr","R","D","Wysokość","Kąt","Rowek","Rolka","Stopień"],[["S1",27.3,10.2,8,0,0.9,"-",1]]);
+document.getElementById("ap").onclick=()=>addR("tp",8);document.getElementById("ab").onclick=()=>addR("bp",8);
+document.getElementById("ba").onclick=()=>{autoFit=false;CFG=readCfg();drawHead();drawPreview();if(HAS){assignTools();table();tm=0;}document.getElementById("cm").textContent="Zapisano: typ "+CFG.type+", trzpienie: "+CFG.pins.length+", bolce: "+CFG.bolts.length+(HAS?". Głowica dobrała trzpienie do gięć, sprawdź kolumnę „Trzpień” i ocenę kolizji.":".");};
+recalcDefaultGeometry();CFG=readCfg();drawHead();drawPreview();placeSleeve();
+{const sl=document.getElementById("sl");sl.addEventListener("input",placeSleeve);sl.addEventListener("change",()=>{placeSleeve();if(HAS)table();});}
+{const w=document.getElementById("wd");w.addEventListener("change",()=>{if(!HAS||w.readOnly)return;const v=parseFloat(String(w.value).replace(",","."));if(!(v>0))return;ID.wd=v;wire.scale.set(1,v/3,v/3);recalcDefaultGeometry();CFG=readCfg();if(autoFit)optimizeTools();else{drawHead();assignTools();table();tm=0;}buildModelView();drawPreview();});}
+</script>
+
+
+<script>
+(function(){
+  var btn=document.getElementById("exportCsv");
+  if(!btn)return;
+  btn.onclick=function(){
+    var source=(document.getElementById("modelCoords").value||document.getElementById("co").value||"").trim();
+    if(!source){alert("Najpierw wczytaj model lub współrzędne.");return;}
+    var name=window.prompt("Podaj nazwę programu:","TWOJA NAZWA PROGRAMU");
+    if(name===null)return;
+    name=name.trim();
+    if(!name){alert("Wpisz nazwę programu.");return;}
+    var rows=source.split(/\r?\n/).map(function(line){
+      line=line.trim(); if(!line)return null;
+      var parts=line.split(/\s+/);
+      if(parts.length<3)return null;
+      var vals=parts.slice(0,4).map(function(v){return Number(v.replace(",", "."));});
+      if(vals.length<3||!isFinite(vals[0])||!isFinite(vals[1])||!isFinite(vals[2]))return null;
+      if(!isFinite(vals[3]))vals[3]=0;
+      return vals.map(function(v){return v.toFixed(2).replace(".",",");}).join(":");
+    }).filter(Boolean);
+    if(!rows.length){alert("Nie znaleziono współrzędnych X Y Z do eksportu.");return;}
+    var content=[name,"mm","RGSP","$"].concat(rows,["$"]).join("\r\n");
+    var blob=new Blob(["\uFEFF"+content],{type:"text/csv;charset=utf-8"});
+    var filename=name.replace(/[\\/:*?"<>|]/g,"_")+".csv";
+    if(window.navigator.msSaveOrOpenBlob){window.navigator.msSaveOrOpenBlob(blob,filename);}
+    else{
+      var url=(window.URL||window.webkitURL).createObjectURL(blob);
+      var link=document.createElement("a");
+      link.href=url;link.download=filename;link.style.display="none";
+      document.body.appendChild(link);
+      if(typeof link.click==="function")link.click();
+      else link.dispatchEvent(new MouseEvent("click",{bubbles:true,cancelable:true,view:window}));
+      setTimeout(function(){document.body.removeChild(link);(window.URL||window.webkitURL).revokeObjectURL(url);},1500);
+    }
+    var msg=document.getElementById("msg");
+    if(msg)msg.textContent="Eksport CSV przygotowany: "+filename;
+  };
+})();
+</script>
+
+</body>
+</html>
