@@ -1,0 +1,9 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="./manifest.webmanifest"><title>Wizualizacja giętarki</title>
+<style>body{font-family:system-ui,sans-serif;margin:0;padding:16px;background:#14181f;color:#e8ecf2}
+.bad{color:#ff7b72}.ok{color:#5fd37f}select,input{font-size:15px;max-width:100%}h1{font-size:18px}h3{margin:12px 0 4px}</style></head>
+<body><h1>Wizualizacja giętarki – krok 1: głowice</h1>
+<p>Wczytaj plik JSON z konfiguratora:</p><input type="file" id="file" accept=".json,application/json">
+<p id="err" class="bad"></p><select id="heads"></select><div id="info"></div>
+<script type="module" src="/src/main.ts"></script></body></html>
